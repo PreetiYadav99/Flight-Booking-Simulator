@@ -7,6 +7,7 @@ import sqlite3
 import csv
 from datetime import datetime
 import os
+import random
 
 DB_FILE = 'flights.db'
 SCHEMA_FILE = 'schema.sql'
@@ -32,7 +33,27 @@ def init_database():
     
     c.executescript(schema)
     print(f"Applied schema from: {SCHEMA_FILE}")
-    
+
+    # Create additional tables for dynamic pricing simulation
+    extra_sql = """
+    CREATE TABLE IF NOT EXISTS demand_levels (
+        flight_id INTEGER PRIMARY KEY,
+        demand_level REAL NOT NULL DEFAULT 1.0,
+        last_updated TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS fare_history (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        flight_id INTEGER NOT NULL,
+        timestamp TEXT NOT NULL,
+        old_price REAL,
+        new_price REAL,
+        demand_level REAL,
+        available_seats INTEGER
+    );
+    """
+    c.executescript(extra_sql)
+
     # Load sample data from CSV
     load_sample_data(conn)
     
@@ -142,6 +163,23 @@ def load_sample_data(conn):
                     available_seats,
                     duration_mins
                 ))
+                # seed demand_levels for this flight
+                fid = c.lastrowid
+                try:
+                    c.execute(
+                        "INSERT OR REPLACE INTO demand_levels (flight_id, demand_level, last_updated) VALUES (?, ?, ?)",
+                        (fid, 1.0, datetime.utcnow().isoformat())
+                    )
+                except Exception:
+                    pass
+                # initial fare history record
+                try:
+                    c.execute(
+                        "INSERT INTO fare_history (flight_id, timestamp, old_price, new_price, demand_level, available_seats) VALUES (?, ?, ?, ?, ?, ?)",
+                        (fid, datetime.utcnow().isoformat(), None, base_price, 1.0, available_seats)
+                    )
+                except Exception:
+                    pass
                 flight_count += 1
         
         except Exception as e:
@@ -149,6 +187,53 @@ def load_sample_data(conn):
             continue
     
     print(f"Inserted {flight_count} flights")
+
+    # Seed demand_levels and initial fare_history for each flight
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT id, base_price, available_seats FROM flights")
+        flights = cursor.fetchall()
+        seeded = 0
+        for f in flights:
+            flight_id = f[0]
+            base_price = float(f[1]) if f[1] is not None else 0.0
+            available_seats = int(f[2]) if f[2] is not None else 0
+
+            # Insert default demand level (1.0 = neutral)
+            cursor.execute(
+                "INSERT OR REPLACE INTO demand_levels (flight_id, demand_level, last_updated) VALUES (?, ?, datetime('now'))",
+                (flight_id, 1.0)
+            )
+
+            # Insert initial fare history record
+            cursor.execute(
+                "INSERT INTO fare_history (flight_id, old_price, new_price, demand_level, available_seats, timestamp) VALUES (?, ?, ?, ?, ?, datetime('now'))",
+                (flight_id, None, base_price, 1.0, available_seats)
+            )
+            seeded += 1
+
+        print(f"Seeded demand_levels and fare_history for {seeded} flights")
+    except Exception as e:
+        print(f"Error seeding demand/fare tables: {e}")
+
+    # Insert initial demand levels and fare history for each flight
+    # (Removed duplicate/incorrect seeding that referenced a non-existent `demand` table
+    # and mismatched fare_history columns.)
+
+    # Initialize demand_levels for each flight
+    c.execute("SELECT id FROM flights")
+    flights = c.fetchall()
+    now_iso = datetime.utcnow().isoformat()
+    for (fid,) in flights:
+        try:
+            c.execute(
+                "INSERT OR REPLACE INTO demand_levels (flight_id, demand_level, last_updated) VALUES (?, ?, ?)",
+                (fid, 1.0, now_iso)
+            )
+        except Exception as e:
+            print(f"Error initializing demand for flight {fid}: {e}")
+
+    print(f"Initialized demand levels for {len(flights)} flights")
 
 
 if __name__ == '__main__':
