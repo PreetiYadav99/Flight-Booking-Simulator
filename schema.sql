@@ -50,3 +50,23 @@ CREATE TABLE IF NOT EXISTS fare_history (
   available_seats INTEGER,
   FOREIGN KEY (flight_id) REFERENCES flights(id)
 );
+
+-- Table to store bookings with transaction/concurrency safety
+CREATE TABLE IF NOT EXISTS bookings (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  pnr TEXT NOT NULL UNIQUE,
+  flight_id INTEGER NOT NULL,
+  passenger_name TEXT NOT NULL,
+  passenger_email TEXT NOT NULL,
+  seat_number TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'confirmed',
+  booked_price REAL NOT NULL,
+  booking_date DATETIME NOT NULL DEFAULT (datetime('now')),
+  payment_status TEXT NOT NULL DEFAULT 'success',
+  FOREIGN KEY (flight_id) REFERENCES flights(id)
+);
+
+-- Index for quick lookups by PNR and email
+CREATE INDEX IF NOT EXISTS idx_bookings_pnr ON bookings(pnr);
+CREATE INDEX IF NOT EXISTS idx_bookings_email ON bookings(passenger_email);
+CREATE INDEX IF NOT EXISTS idx_bookings_flight ON bookings(flight_id);

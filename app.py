@@ -606,6 +606,255 @@ def external_push_schedule():
     return jsonify({"status": "accepted", "received": payload}), 200
 
 
+# ============= BOOKING WORKFLOW (MILESTONE 3) =============
+
+def generate_pnr(airline_code):
+    """Generate a unique PNR: AIRLINE_CODE + 6 random alphanumeric chars."""
+    chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+    suffix = ''.join(random.choice(chars) for _ in range(6))
+    return f"{airline_code}{suffix}"
+
+
+def simulate_payment(email, amount):
+    """Simulate payment processing. 95% success rate."""
+    if random.random() < 0.95:
+        return True, "Payment successful"
+    else:
+        return False, "Payment declined"
+
+
+@app.route('/book/initiate', methods=['POST'])
+@error_handler
+def initiate_booking():
+    """Initiate booking: select flight and seat.
+    Request: { "flight_id": int, "seat_number": str }
+    Response: { "flight_id", "seat_number", "current_price", "booking_reference" (temp) }
+    """
+    payload = request.get_json()
+    if not payload:
+        return jsonify({"error": "JSON payload required", "status": "error"}), 400
+
+    flight_id = payload.get('flight_id')
+    seat_number = payload.get('seat_number')
+
+    if not flight_id or not seat_number:
+        return jsonify({"error": "flight_id and seat_number required", "status": "error"}), 400
+
+    # Check if flight exists and has available seats
+    flight_data = query_db("SELECT f.id, f.flight_number, a.code, f.available_seats, f.base_price FROM flights f JOIN airlines a ON f.airline_id = a.id WHERE f.id = ?", (flight_id,))
+    if not flight_data:
+        return jsonify({"error": f"Flight {flight_id} not found", "status": "error"}), 404
+
+    flight = flight_data[0]
+    if int(flight['available_seats']) <= 0:
+        return jsonify({"error": "No available seats on this flight", "status": "error"}), 400
+
+    # Compute dynamic price
+    price = compute_dynamic_price(flight)
+
+    # Return booking initiation with temp reference
+    temp_ref = f"{flight_id}_{seat_number}_{int(time.time())}"
+
+    return jsonify({
+        "status": "initiated",
+        "flight_id": flight_id,
+        "flight_number": flight['flight_number'],
+        "seat_number": seat_number,
+        "current_price": price,
+        "temp_reference": temp_ref
+    }), 200
+
+
+@app.route('/book/confirm', methods=['POST'])
+@error_handler
+def confirm_booking():
+    """Confirm booking: provide passenger info and simulate payment.
+    Request: { "flight_id": int, "seat_number": str, "passenger_name": str, "passenger_email": str }
+    Response: { "status": "success", "pnr": str, "booking_details" }
+    Uses transaction to ensure atomicity: deduct seat, process payment, insert booking.
+    """
+    payload = request.get_json()
+    if not payload:
+        return jsonify({"error": "JSON payload required", "status": "error"}), 400
+
+    flight_id = payload.get('flight_id')
+    seat_number = payload.get('seat_number')
+    passenger_name = payload.get('passenger_name')
+    passenger_email = payload.get('passenger_email')
+
+    required = ['flight_id', 'seat_number', 'passenger_name', 'passenger_email']
+    missing = [r for r in required if r not in payload]
+    if missing:
+        return jsonify({"error": f"Missing fields: {missing}", "status": "error"}), 400
+
+    # Fetch flight info
+    flight_data = query_db(
+        "SELECT f.id, f.flight_number, a.code, f.available_seats, f.base_price FROM flights f JOIN airlines a ON f.airline_id = a.id WHERE f.id = ?",
+        (flight_id,)
+    )
+    if not flight_data:
+        return jsonify({"error": f"Flight {flight_id} not found", "status": "error"}), 404
+
+    flight = flight_data[0]
+    if int(flight['available_seats']) <= 0:
+        return jsonify({"error": "No available seats on this flight", "status": "error"}), 400
+
+    # Compute dynamic price
+    booked_price = compute_dynamic_price(flight)
+
+    # Simulate payment
+    payment_success, payment_msg = simulate_payment(passenger_email, booked_price)
+    if not payment_success:
+        return jsonify({"status": "payment_failed", "message": payment_msg}), 400
+
+    # Begin transaction: deduct seat, create booking with unique PNR
+    try:
+        conn = sqlite3.connect(DB)
+        conn.isolation_level = None  # autocommit off
+        cur = conn.cursor()
+
+        cur.execute("BEGIN TRANSACTION")
+
+        # Check and deduct available_seats (double-check for concurrency)
+        cur.execute("SELECT available_seats FROM flights WHERE id = ?", (flight_id,))
+        result = cur.fetchone()
+        if result is None or result[0] <= 0:
+            cur.execute("ROLLBACK")
+            conn.close()
+            return jsonify({"error": "Seat not available (concurrent booking)", "status": "error"}), 409
+
+        # Deduct seat
+        cur.execute("UPDATE flights SET available_seats = available_seats - 1 WHERE id = ?", (flight_id,))
+
+        # Generate unique PNR
+        pnr = generate_pnr(flight['code'])
+
+        # Insert booking
+        booking_date = datetime.utcnow().isoformat()
+        cur.execute(
+            """INSERT INTO bookings (pnr, flight_id, passenger_name, passenger_email, seat_number, status, booked_price, booking_date, payment_status)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            (pnr, flight_id, passenger_name, passenger_email, seat_number, 'confirmed', booked_price, booking_date, 'success')
+        )
+
+        cur.execute("COMMIT")
+        conn.close()
+
+        return jsonify({
+            "status": "success",
+            "pnr": pnr,
+            "booking_details": {
+                "flight_number": flight['flight_number'],
+                "passenger_name": passenger_name,
+                "passenger_email": passenger_email,
+                "seat_number": seat_number,
+                "booked_price": booked_price,
+                "booking_date": booking_date
+            }
+        }), 201
+
+    except Exception as e:
+        try:
+            cur.execute("ROLLBACK")
+        except Exception:
+            pass
+        conn.close()
+        return jsonify({"error": f"Booking failed: {str(e)}", "status": "error"}), 500
+
+
+@app.route('/bookings/<pnr>', methods=['GET'])
+@error_handler
+def get_booking(pnr):
+    """Retrieve booking details by PNR."""
+    booking_data = query_db(
+        """SELECT b.*, f.flight_number, a.name AS airline_name
+           FROM bookings b
+           JOIN flights f ON b.flight_id = f.id
+           JOIN airlines a ON f.airline_id = a.id
+           WHERE b.pnr = ?""",
+        (pnr,)
+    )
+
+    if not booking_data:
+        return jsonify({"error": f"Booking {pnr} not found", "status": "error"}), 404
+
+    booking = booking_data[0]
+    return jsonify({
+        "status": "success",
+        "booking": booking
+    }), 200
+
+
+@app.route('/bookings/history/<email>', methods=['GET'])
+@error_handler
+def get_booking_history(email):
+    """Retrieve all bookings for a passenger by email."""
+    bookings = query_db(
+        """SELECT b.*, f.flight_number, a.name AS airline_name
+           FROM bookings b
+           JOIN flights f ON b.flight_id = f.id
+           JOIN airlines a ON f.airline_id = a.id
+           WHERE b.passenger_email = ?
+           ORDER BY b.booking_date DESC""",
+        (email,)
+    )
+
+    return jsonify({
+        "status": "success",
+        "email": email,
+        "count": len(bookings),
+        "bookings": bookings
+    }), 200
+
+
+@app.route('/bookings/<pnr>', methods=['DELETE'])
+@error_handler
+def cancel_booking(pnr):
+    """Cancel a booking and restore available seat.
+    Uses transaction to ensure atomicity.
+    """
+    # Get booking details
+    booking_data = query_db("SELECT id, flight_id, status FROM bookings WHERE pnr = ?", (pnr,))
+
+    if not booking_data:
+        return jsonify({"error": f"Booking {pnr} not found", "status": "error"}), 404
+
+    booking = booking_data[0]
+
+    if booking['status'] == 'cancelled':
+        return jsonify({"error": "Booking already cancelled", "status": "error"}), 400
+
+    # Begin transaction: mark booking as cancelled, restore seat
+    try:
+        conn = sqlite3.connect(DB)
+        conn.isolation_level = None
+        cur = conn.cursor()
+
+        cur.execute("BEGIN TRANSACTION")
+
+        # Update booking status
+        cur.execute("UPDATE bookings SET status = 'cancelled' WHERE pnr = ?", (pnr,))
+
+        # Restore available seats
+        cur.execute("UPDATE flights SET available_seats = available_seats + 1 WHERE id = ?", (booking['flight_id'],))
+
+        cur.execute("COMMIT")
+        conn.close()
+
+        return jsonify({
+            "status": "success",
+            "message": f"Booking {pnr} cancelled",
+            "restored_seat": True
+        }), 200
+
+    except Exception as e:
+        try:
+            cur.execute("ROLLBACK")
+        except Exception:
+            pass
+        conn.close()
+        return jsonify({"error": f"Cancellation failed: {str(e)}", "status": "error"}), 500
+
 
 # ============= ERROR HANDLERS =============
 
