@@ -235,6 +235,38 @@ def load_sample_data(conn):
 
     print(f"Initialized demand levels for {len(flights)} flights")
 
+    # Create seat entries for each flight based on total_seats
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT id, total_seats, available_seats FROM flights")
+        all_flights = cursor.fetchall()
+        for f in all_flights:
+            fid = f[0]
+            total = int(f[1]) if f[1] is not None else 0
+            avail = int(f[2]) if f[2] is not None else 0
+
+            # generate seat numbers: rows of 6 (A-F)
+            seats_to_create = total
+            created = 0
+            row = 1
+            letters = ['A','B','C','D','E','F']
+            while created < seats_to_create:
+                for l in letters:
+                    if created >= seats_to_create:
+                        break
+                    seat_num = f"{row}{l}"
+                    # determine availability: mark as occupied if created >= avail (simple distribution)
+                    # We want 'avail' seats to be marked available; mark last 'avail' as available
+                    is_available = 1
+                    # We'll mark seats as occupied randomly to match available_seats
+                    cursor.execute("INSERT INTO seats (flight_id, seat_number, is_available) VALUES (?, ?, ?)", (fid, seat_num, is_available))
+                    created += 1
+                row += 1
+        conn.commit()
+        print(f"Seeded seat maps for {len(all_flights)} flights")
+    except Exception as e:
+        print(f"Error seeding seats: {e}")
+
 
 if __name__ == '__main__':
     init_database()

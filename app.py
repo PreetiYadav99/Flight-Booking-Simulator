@@ -7,6 +7,7 @@ import random
 import threading
 import time
 from functools import wraps
+from email_utils import send_email
 
 load_dotenv()
 
@@ -402,6 +403,19 @@ def record_fare_history(flight_id, old_price, new_price, demand_level, available
     )
 
 
+def admin_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = request.headers.get('X-Admin-Token') or request.args.get('admin_token')
+        expected = os.environ.get('ADMIN_TOKEN')
+        if not expected:
+            return jsonify({"error": "Admin token not configured on server", "status": "error"}), 500
+        if not token or token != expected:
+            return jsonify({"error": "Unauthorized: invalid admin token", "status": "error"}), 401
+        return f(*args, **kwargs)
+    return decorated
+
+
 def compute_dynamic_price(flight_row):
     """Compute a dynamic price for a flight row (dict) using base fare, seats, time to departure, demand."""
     try:
@@ -740,6 +754,14 @@ def confirm_booking():
         cur.execute("COMMIT")
         conn.close()
 
+        # Send confirmation email (best-effort)
+        try:
+            subject = f"Booking Confirmation - {pnr}"
+            body = f"Hello {passenger_name},\n\nYour booking (PNR: {pnr}) for flight {flight['flight_number']} is confirmed. Seat: {seat_number}. Price: {booked_price}\n\nThank you for booking with us."
+            send_email(passenger_email, subject, body)
+        except Exception:
+            pass
+
         return jsonify({
             "status": "success",
             "pnr": pnr,
@@ -833,13 +855,50 @@ def cancel_booking(pnr):
         cur.execute("BEGIN TRANSACTION")
 
         # Update booking status
-        cur.execute("UPDATE bookings SET status = 'cancelled' WHERE pnr = ?", (pnr,))
+        # determine refund policy: simple rule
+        # fetch booking details
+        cur.execute("SELECT id, flight_id, booked_price, booking_date FROM bookings WHERE pnr = ?", (pnr,))
+        b = cur.fetchone()
+        refund_amount = 0.0
+        refund_status = None
+        if b:
+            booked_price = float(b[2] or 0)
+            # determine flight departure
+            cur.execute("SELECT departure FROM flights WHERE id = ?", (b[1],))
+            dep = cur.fetchone()
+            try:
+                dep_dt = datetime.fromisoformat(dep[0]) if dep and dep[0] else None
+            except Exception:
+                dep_dt = None
+            if dep_dt:
+                hrs = (dep_dt - datetime.utcnow()).total_seconds() / 3600.0
+                if hrs >= 24:
+                    refund_amount = booked_price  # full refund if >=24 hours
+                else:
+                    refund_amount = round(booked_price * 0.5, 2)  # 50% if <24 hours
+            else:
+                refund_amount = 0.0
+
+        cur.execute("UPDATE bookings SET status = 'cancelled', refund_status = ?, refund_amount = ? WHERE pnr = ?", ( 'processed' if refund_amount>0 else 'none', refund_amount, pnr))
 
         # Restore available seats
         cur.execute("UPDATE flights SET available_seats = available_seats + 1 WHERE id = ?", (booking['flight_id'],))
 
         cur.execute("COMMIT")
         conn.close()
+
+        # Send cancellation email
+        try:
+            # fetch passenger email
+            rec = query_db("SELECT passenger_email, passenger_name FROM bookings WHERE pnr = ?", (pnr,))
+            if rec:
+                passenger_email = rec[0]['passenger_email']
+                passenger_name = rec[0]['passenger_name']
+                subject = f"Booking Cancelled - {pnr}"
+                body = f"Hello {passenger_name},\n\nYour booking (PNR: {pnr}) has been cancelled. Refund amount: {refund_amount}.\n\nRegards"
+                send_email(passenger_email, subject, body)
+        except Exception:
+            pass
 
         return jsonify({
             "status": "success",
@@ -897,3 +956,92 @@ if __name__ == '__main__':
     finally:
         # Stop background worker on shutdown
         stop_simulation()
+
+# ============= ADDITIONAL ENDPOINTS: Seats & Admin =============
+
+
+@app.route('/seats/<int:flight_id>', methods=['GET'])
+@error_handler
+def get_seat_map(flight_id):
+    """Return seat map for a flight"""
+    seats = query_db("SELECT seat_number, is_available FROM seats WHERE flight_id = ? ORDER BY id ASC", (flight_id,))
+    if seats is None:
+        return jsonify({"error": "Flight not found or no seats", "status": "error"}), 404
+    return jsonify({"status": "success", "flight_id": flight_id, "seats": seats}), 200
+
+
+@app.route('/seats/assign', methods=['POST'])
+@error_handler
+def assign_seat():
+    """Assign best available seat if seat_number not provided.
+    Request: { flight_id: int, passenger_email: str, seat_number?: str }
+    """
+    payload = request.get_json()
+    if not payload:
+        return jsonify({"error": "JSON payload required", "status": "error"}), 400
+    flight_id = payload.get('flight_id')
+    passenger_email = payload.get('passenger_email')
+    seat_number = payload.get('seat_number')
+    if not flight_id or not passenger_email:
+        return jsonify({"error": "flight_id and passenger_email required", "status": "error"}), 400
+
+    conn = sqlite3.connect(DB)
+    conn.isolation_level = None
+    cur = conn.cursor()
+    try:
+        cur.execute("BEGIN TRANSACTION")
+        if seat_number:
+            # try to reserve provided seat
+            cur.execute("SELECT is_available FROM seats WHERE flight_id = ? AND seat_number = ?", (flight_id, seat_number))
+            r = cur.fetchone()
+            if not r or r[0] == 0:
+                cur.execute("ROLLBACK")
+                conn.close()
+                return jsonify({"error": "Seat not available"}), 400
+            cur.execute("UPDATE seats SET is_available = 0 WHERE flight_id = ? AND seat_number = ?", (flight_id, seat_number))
+        else:
+            # pick first available seat
+            cur.execute("SELECT seat_number FROM seats WHERE flight_id = ? AND is_available = 1 ORDER BY id ASC LIMIT 1", (flight_id,))
+            r = cur.fetchone()
+            if not r:
+                cur.execute("ROLLBACK")
+                conn.close()
+                return jsonify({"error": "No seats available"}), 400
+            seat_number = r[0]
+            cur.execute("UPDATE seats SET is_available = 0 WHERE flight_id = ? AND seat_number = ?", (flight_id, seat_number))
+
+        # decrement available_seats on flight
+        cur.execute("UPDATE flights SET available_seats = available_seats - 1 WHERE id = ?", (flight_id,))
+        cur.execute("COMMIT")
+        conn.close()
+        return jsonify({"status": "success", "flight_id": flight_id, "seat_number": seat_number}), 200
+    except Exception as e:
+        try:
+            cur.execute("ROLLBACK")
+        except Exception:
+            pass
+        conn.close()
+        return jsonify({"error": str(e), "status": "error"}), 500
+
+
+@app.route('/admin/bookings', methods=['GET'])
+@admin_required
+def admin_list_bookings():
+    q = "SELECT b.pnr, b.passenger_name, b.passenger_email, b.status, b.booked_price, f.flight_number FROM bookings b JOIN flights f ON b.flight_id = f.id ORDER BY b.booking_date DESC LIMIT 200"
+    data = query_db(q)
+    return jsonify({"status": "success", "count": len(data), "bookings": data}), 200
+
+
+@app.route('/admin/set_demand', methods=['POST'])
+@admin_required
+def admin_set_demand():
+    payload = request.get_json()
+    if not payload:
+        return jsonify({"error": "JSON required"}), 400
+    flight_id = payload.get('flight_id')
+    demand = float(payload.get('demand_level', 1.0))
+    if not flight_id:
+        return jsonify({"error": "flight_id required"}), 400
+    set_demand_for_flight(flight_id, demand)
+    return jsonify({"status": "success", "flight_id": flight_id, "demand_level": demand}), 200
+

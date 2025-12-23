@@ -63,6 +63,8 @@ CREATE TABLE IF NOT EXISTS bookings (
   booked_price REAL NOT NULL,
   booking_date DATETIME NOT NULL DEFAULT (datetime('now')),
   payment_status TEXT NOT NULL DEFAULT 'success',
+  refund_status TEXT DEFAULT NULL,
+  refund_amount REAL DEFAULT 0.0,
   FOREIGN KEY (flight_id) REFERENCES flights(id)
 );
 
@@ -70,3 +72,15 @@ CREATE TABLE IF NOT EXISTS bookings (
 CREATE INDEX IF NOT EXISTS idx_bookings_pnr ON bookings(pnr);
 CREATE INDEX IF NOT EXISTS idx_bookings_email ON bookings(passenger_email);
 CREATE INDEX IF NOT EXISTS idx_bookings_flight ON bookings(flight_id);
+
+-- Seat map table: one row per seat for each flight. This allows seat-level assignment and visual maps.
+CREATE TABLE IF NOT EXISTS seats (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  flight_id INTEGER NOT NULL,
+  seat_number TEXT NOT NULL,
+  is_available INTEGER NOT NULL DEFAULT 1,
+  class TEXT DEFAULT 'economy',
+  FOREIGN KEY (flight_id) REFERENCES flights(id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_seats_flight ON seats(flight_id);
