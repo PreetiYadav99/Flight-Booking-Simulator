@@ -1,0 +1,42 @@
+airline_name,airline_code,airport_name,city,country,iata_code,flight_number,origin_city,destination_city,departure,arrival,base_price,total_seats,available_seats,duration_mins
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW101,New Delhi,Mumbai,2025-12-05 08:00:00,2025-12-05 10:15:00,4500,180,145,135
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW102,Mumbai,New Delhi,2025-12-05 11:30:00,2025-12-05 13:45:00,4500,180,162,135
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE201,Bangalore,New Delhi,2025-12-05 06:00:00,2025-12-05 08:30:00,3800,160,95,150
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE202,New Delhi,Bangalore,2025-12-05 14:00:00,2025-12-05 16:30:00,3800,160,128,150
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW103,Chennai,Mumbai,2025-12-05 07:15:00,2025-12-05 09:00:00,3200,200,178,105
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW104,Mumbai,Chennai,2025-12-05 16:45:00,2025-12-05 18:30:00,3200,200,194,105
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE203,Bangalore,Mumbai,2025-12-05 09:30:00,2025-12-05 11:15:00,2900,170,142,105
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE204,Mumbai,Bangalore,2025-12-05 18:00:00,2025-12-05 19:45:00,2900,170,151,105
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA301,Hyderabad,New Delhi,2025-12-05 05:30:00,2025-12-05 07:45:00,4100,190,76,135
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA302,New Delhi,Hyderabad,2025-12-05 15:00:00,2025-12-05 17:15:00,4100,190,104,135
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW105,Chennai,Bangalore,2025-12-05 10:00:00,2025-12-05 11:15:00,2100,180,168,75
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW106,Bangalore,Chennai,2025-12-05 12:30:00,2025-12-05 13:45:00,2100,180,174,75
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE205,Hyderabad,Bangalore,2025-12-05 08:00:00,2025-12-05 09:30:00,2600,160,118,90
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE206,Bangalore,Hyderabad,2025-12-05 17:30:00,2025-12-05 19:00:00,2600,160,139,90
+FastAir,FA,Chennai International,Chennai,India,MAA,FA303,Chennai,New Delhi,2025-12-05 08:30:00,2025-12-05 11:00:00,5200,200,156,150
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA304,New Delhi,Chennai,2025-12-05 13:15:00,2025-12-05 15:45:00,5200,200,172,150
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW107,Ahmedabad,Mumbai,2025-12-05 06:45:00,2025-12-05 08:15:00,2400,170,136,90
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW108,Mumbai,Ahmedabad,2025-12-05 19:00:00,2025-12-05 20:30:00,2400,170,161,90
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE207,Ahmedabad,Bangalore,2025-12-05 07:00:00,2025-12-05 08:45:00,2200,150,120,105
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE208,Bangalore,Ahmedabad,2025-12-05 18:30:00,2025-12-05 20:15:00,2200,150,131,105
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA305,Hyderabad,Mumbai,2025-12-05 11:00:00,2025-12-05 12:45:00,3500,180,108,105
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA306,Mumbai,Hyderabad,2025-12-05 14:30:00,2025-12-05 16:15:00,3500,180,135,105
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW109,Ahmedabad,Chennai,2025-12-05 09:15:00,2025-12-05 11:00:00,3900,190,152,105
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW110,Chennai,Ahmedabad,2025-12-05 17:45:00,2025-12-05 19:30:00,3900,190,164,105
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE209,Hyderabad,Chennai,2025-12-05 10:30:00,2025-12-05 12:15:00,3100,160,96,105
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE210,Chennai,Hyderabad,2025-12-05 20:00:00,2025-12-05 21:45:00,3100,160,145,105
+FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA307,Ahmedabad,New Delhi,2025-12-05 05:00:00,2025-12-05 07:00:00,4800,200,92,120
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA308,New Delhi,Ahmedabad,2025-12-05 19:30:00,2025-12-05 21:30:00,4800,200,184,120
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW111,Bangalore,Hyderabad,2025-12-05 11:45:00,2025-12-05 13:00:00,1900,160,146,75
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW112,Hyderabad,Bangalore,2025-12-05 14:15:00,2025-12-05 15:30:00,1900,160,158,75
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE211,Ahmedabad,Hyderabad,2025-12-05 12:00:00,2025-12-05 13:45:00,2400,140,105,105
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE212,Hyderabad,Ahmedabad,2025-12-05 16:30:00,2025-12-05 18:15:00,2400,140,124,105
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW113,Kolkata,Delhi,2025-12-06 06:00:00,2025-12-06 08:30:00,4700,170,150,150
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE213,Delhi,Kolkata,2025-12-06 10:00:00,2025-12-06 12:30:00,4700,160,140,150
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA309,Mumbai,Ahmedabad,2025-12-06 09:00:00,2025-12-06 10:30:00,2600,180,160,90
+SkyWays,SW,Pune International,Pune,India,PUN,SW114,Pune,Bangalore,2025-12-06 07:15:00,2025-12-06 08:30:00,1800,150,120,75
+AeroExpress,AE,Pune International,Pune,India,PUN,AE214,Bangalore,Pune,2025-12-06 14:00:00,2025-12-06 15:15:00,1800,150,140,75
+FastAir,FA,Goa International,Goa,India,GOI,FA310,Goa,Mumbai,2025-12-06 12:00:00,2025-12-06 13:30:00,3000,160,150,90
+SkyWays,SW,Goa International,Goa,India,GOI,SW115,Mumbai,Goa,2025-12-06 17:00:00,2025-12-06 18:30:00,3000,160,155,90
+AeroExpress,AE,Trivandrum International,Trivandrum,India,TRV,AE215,Trivandrum,Chennai,2025-12-06 06:30:00,2025-12-06 07:45:00,2000,140,120,75
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA311,Mumbai,Delhi,2025-12-07 06:00:00,2025-12-07 08:15:00,4600,200,180,135
