@@ -1,71 +1,71 @@
 import React, { useState, useEffect } from 'react'
-import { Routes, Route, Link, useNavigate } from 'react-router-dom'
-import NavBar from './components/NavBar'
-import Landing from './pages/Landing'
-import Search from './components/Search'
-import FlightDetailsPage from './pages/FlightDetails'
-import BookingFlow from './components/BookingFlow'
-import PnrView from './components/PnrView'
-import Login from './components/Login'
-import Register from './components/Register'
-import BookingHistory from './components/BookingHistory'
-import PassengerInfo from './pages/PassengerInfo'
-import Payment from './pages/Payment'
-import Confirmation from './pages/Confirmation'
-import RetrievePNR from './pages/RetrievePNR'
+import Navbar from './components/Navbar'
+import SearchBox from './components/SearchBox'
+import SearchResults from './components/SearchResults'
+import AuthModal from './components/AuthModal'
+import AdminEmailQueue from './components/AdminEmailQueue'
 
 export default function App(){
-  const [selectedFlight, setSelectedFlight] = useState(null)
-  const [bookingResult, setBookingResult] = useState(null)
+  const [query, setQuery] = useState(null)
   const [user, setUser] = useState(null)
-  const [showRegister, setShowRegister] = useState(false)
-  const [showHistory, setShowHistory] = useState(false)
-
-  const navigate = useNavigate()
+  const [showAuth, setShowAuth] = useState(true)
+  const [showAdmin, setShowAdmin] = useState(false)
 
   useEffect(()=>{
-    async function restoreSession(){
-      try{
-        const res = await fetch('http://127.0.0.1:5000/me', { credentials: 'include' })
-        const data = await res.json()
-        if(res.ok && data.status === 'success' && data.user){
-          setUser({ email: data.user.email, name: data.user.name, id: data.user.id, is_admin: data.user.is_admin })
+    // check session
+    const API = (import.meta.env?.VITE_API_URL) || 'http://127.0.0.1:5000'
+    fetch(`${API}/me`, { credentials: 'include' })
+      .then(r=>r.json())
+      .then(data=>{
+        if (data && data.status === 'success' && data.user){
+          setUser(data.user)
+          setShowAuth(false)
+        } else {
+          setShowAuth(true)
         }
-      }catch(e){
-        // ignore
-      }
-    }
-    restoreSession()
+      }).catch(()=> setShowAuth(true))
   }, [])
 
   async function handleLogout(){
-    try{ await fetch('http://127.0.0.1:5000/logout', { method: 'POST', credentials: 'include' }) }catch(e){}
+    const API = (import.meta.env?.VITE_API_URL) || 'http://127.0.0.1:5000'
+    try{
+      await fetch(`${API}/logout`, { method: 'POST', credentials: 'include' })
+    }catch(e){}
     setUser(null)
-    navigate('/')
+    setShowAuth(true)
   }
 
   return (
-    <div className="app min-h-screen bg-gray-50">
-      <NavBar user={user} onLogout={handleLogout} />
-      <main className="main py-6">
-        <div className="max-w-5xl mx-auto">
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/flight/:id" element={<FlightDetailsPage />} />
-            <Route path="/passenger/:id" element={<PassengerInfo />} />
-            <Route path="/book/:id" element={<BookingFlow />} />
-            <Route path="/payment/:id" element={<Payment />} />
-            <Route path="/confirmation" element={<Confirmation />} />
-            <Route path="/pnr/:pnr" element={<PnrView booking={bookingResult} />} />
-            <Route path="/history" element={<BookingHistory user={user} onOpenBooking={(b)=>{ setBookingResult(b); navigate(`/pnr/${b.pnr}`) }} />} />
-            <Route path="/retrieve" element={<RetrievePNR />} />
-            <Route path="/login" element={<Login onSuccess={(u)=>setUser(u)} />} />
-            <Route path="/register" element={<Register onSuccess={(u)=>setUser(u)} />} />
-          </Routes>
-        </div>
-      </main>
+    <div className="min-h-screen app-bg relative">
+      {/* subtle colored accent blobs in background */}
+      <div className="bg-animated">
+          <div className="gradient-anim" />
+          {/* simple plane SVG moving across the screen */}
+          <svg className="plane" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{top: '20%'}}>
+            <path fill="rgba(230,249,255,0.95)" d="M2 13.5L22 3l-6 11 6 3-20-3z" />
+          </svg>
+          <svg className="plane" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{top: '60%', animationDelay: '4s', width: '110px'}}>
+            <path fill="rgba(200,230,255,0.85)" d="M2 13.5L22 3l-6 11 6 3-20-3z" />
+          </svg>
+      </div>
+      <Navbar user={user} onLogin={(u)=>{ setUser(u); setShowAuth(false) }} onLogout={handleLogout} onShowAuth={()=>setShowAuth(true)} onShowAdmin={()=>setShowAdmin(true)} />
+      <div className="container mx-auto px-4 py-8">
+        {!user && showAuth && <AuthModal onClose={()=>setShowAuth(false)} onLogin={(u)=>{ setUser(u); setShowAuth(false) }} />}
+        {user && showAdmin && <AdminEmailQueue onClose={()=>setShowAdmin(false)} />}
+
+        {user && (
+          <>
+            <div className="max-w-4xl mx-auto card">
+              <SearchBox onSearch={setQuery} />
+            </div>
+            {query && (
+              <div className="mt-6 max-w-6xl mx-auto">
+                <SearchResults query={query} />
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </div>
   )
 }
-

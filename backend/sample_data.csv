@@ -1,42 +1,701 @@
 airline_name,airline_code,airport_name,city,country,iata_code,flight_number,origin_city,destination_city,departure,arrival,base_price,total_seats,available_seats,duration_mins
-SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW101,New Delhi,Mumbai,2025-12-05 08:00:00,2025-12-05 10:15:00,4500,180,145,135
-SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW102,Mumbai,New Delhi,2025-12-05 11:30:00,2025-12-05 13:45:00,4500,180,162,135
-AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE201,Bangalore,New Delhi,2025-12-05 06:00:00,2025-12-05 08:30:00,3800,160,95,150
-AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE202,New Delhi,Bangalore,2025-12-05 14:00:00,2025-12-05 16:30:00,3800,160,128,150
-SkyWays,SW,Chennai International,Chennai,India,MAA,SW103,Chennai,Mumbai,2025-12-05 07:15:00,2025-12-05 09:00:00,3200,200,178,105
-SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW104,Mumbai,Chennai,2025-12-05 16:45:00,2025-12-05 18:30:00,3200,200,194,105
-AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE203,Bangalore,Mumbai,2025-12-05 09:30:00,2025-12-05 11:15:00,2900,170,142,105
-AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE204,Mumbai,Bangalore,2025-12-05 18:00:00,2025-12-05 19:45:00,2900,170,151,105
-FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA301,Hyderabad,New Delhi,2025-12-05 05:30:00,2025-12-05 07:45:00,4100,190,76,135
-FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA302,New Delhi,Hyderabad,2025-12-05 15:00:00,2025-12-05 17:15:00,4100,190,104,135
-SkyWays,SW,Chennai International,Chennai,India,MAA,SW105,Chennai,Bangalore,2025-12-05 10:00:00,2025-12-05 11:15:00,2100,180,168,75
-SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW106,Bangalore,Chennai,2025-12-05 12:30:00,2025-12-05 13:45:00,2100,180,174,75
-AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE205,Hyderabad,Bangalore,2025-12-05 08:00:00,2025-12-05 09:30:00,2600,160,118,90
-AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE206,Bangalore,Hyderabad,2025-12-05 17:30:00,2025-12-05 19:00:00,2600,160,139,90
-FastAir,FA,Chennai International,Chennai,India,MAA,FA303,Chennai,New Delhi,2025-12-05 08:30:00,2025-12-05 11:00:00,5200,200,156,150
-FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA304,New Delhi,Chennai,2025-12-05 13:15:00,2025-12-05 15:45:00,5200,200,172,150
-SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW107,Ahmedabad,Mumbai,2025-12-05 06:45:00,2025-12-05 08:15:00,2400,170,136,90
-SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW108,Mumbai,Ahmedabad,2025-12-05 19:00:00,2025-12-05 20:30:00,2400,170,161,90
-AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE207,Ahmedabad,Bangalore,2025-12-05 07:00:00,2025-12-05 08:45:00,2200,150,120,105
-AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE208,Bangalore,Ahmedabad,2025-12-05 18:30:00,2025-12-05 20:15:00,2200,150,131,105
-FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA305,Hyderabad,Mumbai,2025-12-05 11:00:00,2025-12-05 12:45:00,3500,180,108,105
-FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA306,Mumbai,Hyderabad,2025-12-05 14:30:00,2025-12-05 16:15:00,3500,180,135,105
-SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW109,Ahmedabad,Chennai,2025-12-05 09:15:00,2025-12-05 11:00:00,3900,190,152,105
-SkyWays,SW,Chennai International,Chennai,India,MAA,SW110,Chennai,Ahmedabad,2025-12-05 17:45:00,2025-12-05 19:30:00,3900,190,164,105
-AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE209,Hyderabad,Chennai,2025-12-05 10:30:00,2025-12-05 12:15:00,3100,160,96,105
-AeroExpress,AE,Chennai International,Chennai,India,MAA,AE210,Chennai,Hyderabad,2025-12-05 20:00:00,2025-12-05 21:45:00,3100,160,145,105
-FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA307,Ahmedabad,New Delhi,2025-12-05 05:00:00,2025-12-05 07:00:00,4800,200,92,120
-FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA308,New Delhi,Ahmedabad,2025-12-05 19:30:00,2025-12-05 21:30:00,4800,200,184,120
-SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW111,Bangalore,Hyderabad,2025-12-05 11:45:00,2025-12-05 13:00:00,1900,160,146,75
-SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW112,Hyderabad,Bangalore,2025-12-05 14:15:00,2025-12-05 15:30:00,1900,160,158,75
-AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE211,Ahmedabad,Hyderabad,2025-12-05 12:00:00,2025-12-05 13:45:00,2400,140,105,105
-AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE212,Hyderabad,Ahmedabad,2025-12-05 16:30:00,2025-12-05 18:15:00,2400,140,124,105
-SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW113,Kolkata,Delhi,2025-12-06 06:00:00,2025-12-06 08:30:00,4700,170,150,150
-AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE213,Delhi,Kolkata,2025-12-06 10:00:00,2025-12-06 12:30:00,4700,160,140,150
-FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA309,Mumbai,Ahmedabad,2025-12-06 09:00:00,2025-12-06 10:30:00,2600,180,160,90
-SkyWays,SW,Pune International,Pune,India,PUN,SW114,Pune,Bangalore,2025-12-06 07:15:00,2025-12-06 08:30:00,1800,150,120,75
-AeroExpress,AE,Pune International,Pune,India,PUN,AE214,Bangalore,Pune,2025-12-06 14:00:00,2025-12-06 15:15:00,1800,150,140,75
-FastAir,FA,Goa International,Goa,India,GOI,FA310,Goa,Mumbai,2025-12-06 12:00:00,2025-12-06 13:30:00,3000,160,150,90
-SkyWays,SW,Goa International,Goa,India,GOI,SW115,Mumbai,Goa,2025-12-06 17:00:00,2025-12-06 18:30:00,3000,160,155,90
-AeroExpress,AE,Trivandrum International,Trivandrum,India,TRV,AE215,Trivandrum,Chennai,2025-12-06 06:30:00,2025-12-06 07:45:00,2000,140,120,75
-FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA311,Mumbai,Delhi,2025-12-07 06:00:00,2025-12-07 08:15:00,4600,200,180,135
+FastAir,FA,Pune International,Pune,India,PUN,FA100,Pune,New Delhi,2024-07-25 06:45:00,2024-07-25 08:30:00,2903,190,134,105
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE101,Kolkata,Pune,2024-05-14 10:15:00,2024-05-14 13:15:00,3302,180,148,180
+TransIndia,TI,Cochin International,Kochi,India,COK,TI102,Kochi,Chennai,2024-07-11 06:00:00,2024-07-11 07:45:00,2101,170,170,105
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE103,Kochi,Chennai,2024-12-13 05:30:00,2024-12-13 07:45:00,6116,150,91,135
+SkyWays,SW,Pune International,Pune,India,PUN,SW104,Pune,Hyderabad,2024-10-02 10:30:00,2024-10-02 12:30:00,2464,190,133,120
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI105,Chennai,New Delhi,2024-09-26 11:45:00,2024-09-26 14:30:00,4798,150,119,165
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE106,Chennai,Mumbai,2024-11-21 16:15:00,2024-11-21 19:15:00,2427,150,135,180
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA107,New Delhi,Pune,2024-01-23 12:15:00,2024-01-23 14:15:00,4709,180,180,120
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ108,Goa,Bangalore,2024-01-05 07:30:00,2024-01-05 09:00:00,5021,190,189,90
+AeroExpress,AE,Goa International,Goa,India,GOI,AE109,Goa,Mumbai,2024-05-01 12:00:00,2024-05-01 13:00:00,6900,160,150,60
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA110,New Delhi,Ahmedabad,2024-11-26 09:15:00,2024-11-26 11:30:00,3414,200,200,135
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW111,Kolkata,Bangalore,2024-03-09 18:45:00,2024-03-09 20:45:00,4621,180,179,120
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI112,Kolkata,Kochi,2024-02-24 09:00:00,2024-02-24 12:00:00,6810,170,161,180
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ113,Goa,Mumbai,2024-08-18 15:00:00,2024-08-18 17:00:00,5439,190,164,120
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ114,Pune,Goa,2024-10-26 11:45:00,2024-10-26 13:00:00,2613,180,174,75
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE115,Hyderabad,Kochi,2024-05-25 18:45:00,2024-05-25 20:30:00,6907,200,149,105
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ116,Chennai,Mumbai,2024-02-10 19:15:00,2024-02-10 21:45:00,4964,150,90,150
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI117,Kolkata,Goa,2024-10-17 12:30:00,2024-10-17 14:00:00,3130,190,138,90
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA118,Bangalore,Hyderabad,2024-01-07 16:00:00,2024-01-07 17:30:00,6736,190,131,90
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI119,Bangalore,New Delhi,2024-03-05 13:00:00,2024-03-05 14:00:00,3568,160,131,60
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW120,Kolkata,Hyderabad,2024-10-20 10:15:00,2024-10-20 12:45:00,4570,170,146,150
+SkyWays,SW,Goa International,Goa,India,GOI,SW121,Goa,Pune,2024-12-21 10:15:00,2024-12-21 12:45:00,5529,170,118,150
+FastAir,FA,Cochin International,Kochi,India,COK,FA122,Kochi,Pune,2024-08-19 05:15:00,2024-08-19 08:15:00,3870,160,151,180
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ123,New Delhi,Goa,2024-12-31 14:45:00,2024-12-31 16:00:00,2382,190,155,75
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA124,Kolkata,Kochi,2024-11-10 07:15:00,2024-11-10 09:30:00,2093,150,124,135
+SkyWays,SW,Pune International,Pune,India,PUN,SW125,Pune,Mumbai,2024-12-09 10:45:00,2024-12-09 11:45:00,6935,200,161,60
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA126,Hyderabad,Mumbai,2024-12-12 10:00:00,2024-12-12 11:30:00,2104,170,169,90
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW127,Kolkata,Kochi,2024-11-15 17:30:00,2024-11-15 18:45:00,4134,170,122,75
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE128,Kochi,Hyderabad,2024-06-25 08:15:00,2024-06-25 11:15:00,4145,170,170,180
+FastAir,FA,Goa International,Goa,India,GOI,FA129,Goa,Ahmedabad,2024-12-20 05:45:00,2024-12-20 06:45:00,4962,180,160,60
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW130,Mumbai,Goa,2024-05-21 05:00:00,2024-05-21 07:00:00,4244,160,151,120
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA131,Bangalore,Goa,2025-01-08 19:15:00,2025-01-08 22:15:00,4320,200,147,180
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE132,Bangalore,New Delhi,2024-11-29 17:30:00,2024-11-29 20:15:00,6981,170,123,165
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE133,Chennai,Bangalore,2024-03-17 17:15:00,2024-03-17 19:15:00,2170,150,121,120
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW134,Hyderabad,Mumbai,2024-04-11 19:45:00,2024-04-11 22:30:00,6485,170,142,165
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ135,Ahmedabad,Chennai,2024-05-02 05:30:00,2024-05-02 07:15:00,3141,150,139,105
+FastAir,FA,Goa International,Goa,India,GOI,FA136,Goa,Pune,2024-01-15 12:30:00,2024-01-15 15:15:00,4984,190,137,165
+FastAir,FA,Goa International,Goa,India,GOI,FA137,Goa,New Delhi,2024-05-09 11:30:00,2024-05-09 14:00:00,6440,180,179,150
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ138,Kochi,Goa,2024-03-08 07:15:00,2024-03-08 10:15:00,5490,160,145,180
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ139,Chennai,Kochi,2024-09-15 13:00:00,2024-09-15 15:45:00,4795,180,149,165
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE140,Mumbai,Chennai,2024-09-07 14:15:00,2024-09-07 17:15:00,4232,150,93,180
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW141,Ahmedabad,Goa,2024-02-19 13:15:00,2024-02-19 14:45:00,2764,160,125,90
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE142,Ahmedabad,Chennai,2024-10-15 19:15:00,2024-10-15 20:30:00,6346,180,145,75
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE143,Mumbai,Pune,2024-04-17 15:00:00,2024-04-17 17:00:00,2659,180,137,120
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ144,Kochi,Chennai,2024-12-27 18:15:00,2024-12-27 19:45:00,5383,150,124,90
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI145,Bangalore,New Delhi,2025-01-09 16:45:00,2025-01-09 18:45:00,5059,160,107,120
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ146,Kochi,Kolkata,2024-09-04 11:30:00,2024-09-04 12:45:00,5043,190,168,75
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW147,Bangalore,Ahmedabad,2024-07-29 15:15:00,2024-07-29 16:30:00,4123,200,189,75
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW148,Ahmedabad,Hyderabad,2024-02-15 12:30:00,2024-02-15 15:15:00,4295,160,149,165
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ149,Kolkata,Pune,2024-10-30 08:30:00,2024-10-30 10:45:00,6596,200,172,135
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW150,Ahmedabad,Pune,2024-03-09 09:15:00,2024-03-09 11:30:00,6045,170,154,135
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE151,Kochi,Pune,2024-10-10 07:00:00,2024-10-10 09:30:00,5990,200,174,150
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ152,Ahmedabad,Chennai,2024-01-11 05:45:00,2024-01-11 08:15:00,3528,200,164,150
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ153,Kolkata,Bangalore,2024-08-12 14:30:00,2024-08-12 16:45:00,6547,150,108,135
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE154,Bangalore,Mumbai,2024-05-05 20:00:00,2024-05-05 22:30:00,3547,170,134,150
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ155,Kochi,Pune,2024-10-14 11:15:00,2024-10-14 12:30:00,6906,190,141,75
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI156,Kolkata,New Delhi,2024-01-16 09:45:00,2024-01-16 12:45:00,2800,200,140,180
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA157,Hyderabad,Goa,2024-04-16 08:15:00,2024-04-16 09:45:00,4465,200,197,90
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA158,Mumbai,Hyderabad,2024-10-31 11:45:00,2024-10-31 14:45:00,6307,200,177,180
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW159,Mumbai,Bangalore,2024-04-03 20:30:00,2024-04-03 21:30:00,3961,160,130,60
+FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA160,Ahmedabad,New Delhi,2025-01-31 08:15:00,2025-01-31 10:45:00,2789,190,144,150
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE161,Kolkata,Mumbai,2024-11-08 20:15:00,2024-11-08 22:00:00,4592,150,112,105
+SkyWays,SW,Pune International,Pune,India,PUN,SW162,Pune,Mumbai,2025-01-16 07:45:00,2025-01-16 10:15:00,7000,150,139,150
+FastAir,FA,Goa International,Goa,India,GOI,FA163,Goa,Hyderabad,2024-09-22 14:00:00,2024-09-22 15:00:00,3386,200,141,60
+FastAir,FA,Pune International,Pune,India,PUN,FA164,Pune,Goa,2024-02-29 05:30:00,2024-02-29 06:45:00,2763,180,133,75
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE165,Kochi,Mumbai,2024-11-09 15:30:00,2024-11-09 17:30:00,4313,180,132,120
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ166,Bangalore,Mumbai,2024-11-07 11:00:00,2024-11-07 12:00:00,6029,180,120,60
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW167,Kolkata,Chennai,2024-09-01 09:15:00,2024-09-01 11:00:00,2844,160,113,105
+TransIndia,TI,Pune International,Pune,India,PUN,TI168,Pune,Hyderabad,2024-05-28 09:30:00,2024-05-28 10:45:00,6403,180,170,75
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ169,Chennai,Mumbai,2025-01-26 05:30:00,2025-01-26 07:00:00,3458,170,142,90
+FastAir,FA,Chennai International,Chennai,India,MAA,FA170,Chennai,Ahmedabad,2024-07-11 17:30:00,2024-07-11 19:45:00,2743,160,104,135
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI171,Ahmedabad,New Delhi,2024-12-22 08:30:00,2024-12-22 10:15:00,3923,200,168,105
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI172,Ahmedabad,Kolkata,2024-12-20 10:45:00,2024-12-20 12:45:00,3967,180,141,120
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA173,Bangalore,Ahmedabad,2024-01-23 20:45:00,2024-01-23 22:00:00,3697,160,160,75
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ174,Kolkata,Chennai,2024-12-25 11:30:00,2024-12-25 13:45:00,2904,160,134,135
+TransIndia,TI,Goa International,Goa,India,GOI,TI175,Goa,Chennai,2024-11-10 16:00:00,2024-11-10 17:30:00,4880,180,173,90
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW176,Hyderabad,New Delhi,2024-03-30 11:15:00,2024-03-30 13:30:00,6087,150,123,135
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA177,Kolkata,Goa,2024-11-29 19:45:00,2024-11-29 21:00:00,2055,170,114,75
+TransIndia,TI,Rajiv Gandhi International,Hyderabad,India,HYD,TI178,Hyderabad,Pune,2024-07-08 08:30:00,2024-07-08 10:45:00,6025,150,102,135
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA179,Mumbai,Kochi,2024-05-03 17:15:00,2024-05-03 18:30:00,3517,180,177,75
+TransIndia,TI,Indira Gandhi International,New Delhi,India,DEL,TI180,New Delhi,Kochi,2024-09-13 05:45:00,2024-09-13 07:45:00,5083,160,150,120
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE181,Ahmedabad,Goa,2024-06-28 11:45:00,2024-06-28 12:45:00,3061,150,113,60
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ182,New Delhi,Bangalore,2024-01-04 15:15:00,2024-01-04 17:45:00,3792,190,184,150
+SkyWays,SW,Pune International,Pune,India,PUN,SW183,Pune,Kolkata,2024-04-23 16:30:00,2024-04-23 19:30:00,3235,160,107,180
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE184,Kolkata,Kochi,2024-10-09 06:15:00,2024-10-09 08:30:00,2303,200,151,135
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW185,Hyderabad,Bangalore,2024-10-07 20:30:00,2024-10-07 22:15:00,6438,150,148,105
+SkyWays,SW,Goa International,Goa,India,GOI,SW186,Goa,Ahmedabad,2024-05-27 08:30:00,2024-05-27 09:30:00,4976,200,178,60
+SkyWays,SW,Cochin International,Kochi,India,COK,SW187,Kochi,Bangalore,2024-07-21 09:15:00,2024-07-21 10:15:00,4789,170,154,60
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW188,Mumbai,Kochi,2024-04-01 08:15:00,2024-04-01 10:00:00,6106,200,155,105
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE189,Mumbai,Bangalore,2024-05-19 15:15:00,2024-05-19 18:00:00,2042,170,113,165
+TransIndia,TI,Goa International,Goa,India,GOI,TI190,Goa,Hyderabad,2024-08-04 20:00:00,2024-08-04 23:00:00,6069,150,140,180
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE191,Bangalore,Goa,2024-06-10 16:30:00,2024-06-10 19:30:00,3565,150,131,180
+AeroExpress,AE,Goa International,Goa,India,GOI,AE192,Goa,Kochi,2024-12-27 15:00:00,2024-12-27 16:00:00,3963,200,170,60
+TransIndia,TI,Pune International,Pune,India,PUN,TI193,Pune,New Delhi,2025-01-23 07:00:00,2025-01-23 09:00:00,6634,190,143,120
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA194,New Delhi,Goa,2024-11-09 07:15:00,2024-11-09 08:45:00,6377,180,171,90
+FastAir,FA,Pune International,Pune,India,PUN,FA195,Pune,Kolkata,2024-11-03 18:30:00,2024-11-03 20:45:00,6642,150,91,135
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE196,Bangalore,Hyderabad,2024-07-15 13:30:00,2024-07-15 15:30:00,5630,200,168,120
+FastAir,FA,Chennai International,Chennai,India,MAA,FA197,Chennai,Goa,2024-03-17 14:30:00,2024-03-17 17:30:00,5940,160,110,180
+AeroExpress,AE,Pune International,Pune,India,PUN,AE198,Pune,Ahmedabad,2024-11-30 07:45:00,2024-11-30 09:30:00,6483,180,138,105
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW199,Mumbai,Ahmedabad,2024-12-05 20:15:00,2024-12-05 23:15:00,4667,180,150,180
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE200,New Delhi,Ahmedabad,2024-03-27 11:30:00,2024-03-27 13:00:00,2780,160,123,90
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA201,Kolkata,Hyderabad,2024-01-14 08:30:00,2024-01-14 10:45:00,3767,150,102,135
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE202,Hyderabad,Chennai,2024-09-05 16:00:00,2024-09-05 19:00:00,3619,190,163,180
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ203,Ahmedabad,Hyderabad,2024-10-08 09:00:00,2024-10-08 11:00:00,3937,160,115,120
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW204,Bangalore,Kochi,2024-05-14 09:15:00,2024-05-14 11:15:00,5044,200,176,120
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW205,Chennai,Bangalore,2024-11-19 12:30:00,2024-11-19 15:15:00,2086,150,129,165
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI206,Ahmedabad,Kolkata,2024-01-04 20:30:00,2024-01-04 22:45:00,2918,160,106,135
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW207,New Delhi,Goa,2024-12-25 20:30:00,2024-12-25 22:30:00,2471,150,93,120
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI208,Chennai,Kolkata,2024-05-17 07:15:00,2024-05-17 08:45:00,5876,170,145,90
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW209,Mumbai,Ahmedabad,2024-04-09 20:00:00,2024-04-09 22:00:00,6165,200,154,120
+FastAir,FA,Cochin International,Kochi,India,COK,FA210,Kochi,Chennai,2024-12-04 16:15:00,2024-12-04 18:30:00,6233,190,134,135
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW211,Bangalore,Goa,2024-08-14 15:45:00,2024-08-14 18:00:00,4290,170,157,135
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE212,New Delhi,Goa,2024-10-06 12:15:00,2024-10-06 15:15:00,6009,170,140,180
+SkyWays,SW,Goa International,Goa,India,GOI,SW213,Goa,Bangalore,2024-05-27 07:15:00,2024-05-27 08:45:00,5675,160,135,90
+SkyWays,SW,Cochin International,Kochi,India,COK,SW214,Kochi,New Delhi,2024-11-08 15:00:00,2024-11-08 18:00:00,2803,180,144,180
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE215,New Delhi,Bangalore,2024-08-11 07:00:00,2024-08-11 09:15:00,3951,200,157,135
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI216,Kolkata,Chennai,2024-07-27 16:30:00,2024-07-27 18:45:00,4992,190,130,135
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ217,Mumbai,Bangalore,2024-12-18 13:15:00,2024-12-18 14:45:00,4647,160,150,90
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW218,Hyderabad,Chennai,2024-10-17 19:00:00,2024-10-17 21:15:00,6949,170,130,135
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI219,Mumbai,Pune,2024-05-10 06:45:00,2024-05-10 08:00:00,6479,150,109,75
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE220,Hyderabad,Chennai,2024-01-11 06:00:00,2024-01-11 07:30:00,6449,170,131,90
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ221,Chennai,Mumbai,2024-07-02 11:30:00,2024-07-02 13:00:00,5766,180,178,90
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE222,New Delhi,Goa,2024-09-08 17:00:00,2024-09-08 20:00:00,5921,180,165,180
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ223,Chennai,Bangalore,2024-05-28 14:45:00,2024-05-28 17:00:00,5397,150,115,135
+AeroExpress,AE,Goa International,Goa,India,GOI,AE224,Goa,Pune,2024-01-14 07:45:00,2024-01-14 10:15:00,4215,150,105,150
+FastAir,FA,Cochin International,Kochi,India,COK,FA225,Kochi,Mumbai,2024-06-08 15:45:00,2024-06-08 17:45:00,2216,170,144,120
+TransIndia,TI,Rajiv Gandhi International,Hyderabad,India,HYD,TI226,Hyderabad,Kolkata,2025-01-21 07:15:00,2025-01-21 10:00:00,4548,160,127,165
+SkyWays,SW,Pune International,Pune,India,PUN,SW227,Pune,Hyderabad,2024-12-22 07:15:00,2024-12-22 08:45:00,5845,200,141,90
+FastAir,FA,Cochin International,Kochi,India,COK,FA228,Kochi,Goa,2024-10-03 19:15:00,2024-10-03 20:30:00,4166,180,167,75
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ229,Kolkata,Hyderabad,2024-09-24 08:30:00,2024-09-24 09:45:00,3936,160,112,75
+FastAir,FA,Goa International,Goa,India,GOI,FA230,Goa,New Delhi,2025-01-25 10:00:00,2025-01-25 13:00:00,2838,150,116,180
+FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA231,Ahmedabad,Chennai,2025-01-01 11:45:00,2025-01-01 14:15:00,3136,200,178,150
+TransIndia,TI,Goa International,Goa,India,GOI,TI232,Goa,Mumbai,2024-05-31 09:00:00,2024-05-31 11:15:00,4672,180,146,135
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA233,Kolkata,Mumbai,2024-09-26 08:45:00,2024-09-26 10:30:00,6398,150,116,105
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE234,Mumbai,Ahmedabad,2024-12-08 13:45:00,2024-12-08 16:30:00,5533,180,132,165
+TransIndia,TI,Rajiv Gandhi International,Hyderabad,India,HYD,TI235,Hyderabad,Chennai,2024-11-05 08:00:00,2024-11-05 09:00:00,4895,190,130,60
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI236,Chennai,Pune,2024-06-23 12:15:00,2024-06-23 15:15:00,6380,180,170,180
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW237,Chennai,Kochi,2024-04-19 12:15:00,2024-04-19 14:45:00,4339,170,141,150
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI238,Kolkata,Hyderabad,2024-12-03 14:45:00,2024-12-03 15:45:00,6770,150,135,60
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ239,Kochi,Pune,2024-02-03 09:30:00,2024-02-03 10:45:00,4617,150,105,75
+SkyWays,SW,Pune International,Pune,India,PUN,SW240,Pune,Kolkata,2024-11-10 11:30:00,2024-11-10 14:00:00,2461,200,144,150
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE241,Kolkata,Ahmedabad,2024-01-25 14:30:00,2024-01-25 16:00:00,5630,180,127,90
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE242,Chennai,Bangalore,2024-01-26 11:45:00,2024-01-26 14:30:00,2703,190,181,165
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI243,Bangalore,Hyderabad,2024-11-03 08:00:00,2024-11-03 10:30:00,3739,180,171,150
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ244,Goa,Chennai,2024-10-21 07:15:00,2024-10-21 09:30:00,3883,200,163,135
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI245,Chennai,Pune,2024-02-02 19:15:00,2024-02-02 21:15:00,4741,170,137,120
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW246,Hyderabad,Bangalore,2024-04-30 11:00:00,2024-04-30 12:45:00,2042,180,156,105
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW247,Kolkata,Pune,2025-01-09 18:30:00,2025-01-09 20:45:00,2597,180,171,135
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ248,New Delhi,Chennai,2024-03-01 12:00:00,2024-03-01 14:30:00,2400,200,155,150
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE249,Ahmedabad,Kochi,2024-08-22 16:00:00,2024-08-22 17:15:00,2757,150,127,75
+FastAir,FA,Chennai International,Chennai,India,MAA,FA250,Chennai,Kolkata,2024-09-13 20:30:00,2024-09-13 23:30:00,6392,150,122,180
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI251,Ahmedabad,Kochi,2024-12-20 18:15:00,2024-12-20 20:45:00,2906,200,180,150
+AeroExpress,AE,Pune International,Pune,India,PUN,AE252,Pune,Kochi,2024-12-25 17:15:00,2024-12-25 19:45:00,6073,170,136,150
+FastAir,FA,Goa International,Goa,India,GOI,FA253,Goa,Kochi,2024-05-09 15:00:00,2024-05-09 17:00:00,4012,190,142,120
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW254,Bangalore,Ahmedabad,2025-01-19 19:45:00,2025-01-19 22:15:00,6048,160,145,150
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI255,Mumbai,Hyderabad,2024-02-04 07:15:00,2024-02-04 09:30:00,5803,180,135,135
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI256,Mumbai,New Delhi,2024-06-18 20:45:00,2024-06-18 23:00:00,4136,160,129,135
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW257,Mumbai,Bangalore,2025-01-31 06:45:00,2025-01-31 09:15:00,3880,180,157,150
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW258,Hyderabad,Ahmedabad,2024-06-24 16:15:00,2024-06-24 19:00:00,5082,150,131,165
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI259,Chennai,Kochi,2024-01-25 14:00:00,2024-01-25 15:30:00,6140,160,160,90
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI260,Kolkata,Chennai,2024-05-13 18:30:00,2024-05-13 21:30:00,5083,180,174,180
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ261,Chennai,Ahmedabad,2025-01-17 17:30:00,2025-01-17 19:30:00,4721,180,145,120
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE262,Kolkata,Hyderabad,2024-06-24 05:15:00,2024-06-24 07:45:00,4356,160,145,150
+SkyWays,SW,Cochin International,Kochi,India,COK,SW263,Kochi,Mumbai,2024-06-29 18:15:00,2024-06-29 20:15:00,6696,190,156,120
+FastAir,FA,Cochin International,Kochi,India,COK,FA264,Kochi,Ahmedabad,2024-07-07 06:45:00,2024-07-07 09:00:00,4708,170,119,135
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI265,Mumbai,Chennai,2024-09-01 15:45:00,2024-09-01 17:15:00,5149,180,156,90
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA266,Mumbai,Pune,2024-10-11 18:45:00,2024-10-11 21:30:00,5422,170,110,165
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA267,Bangalore,Goa,2024-06-10 20:00:00,2024-06-10 21:45:00,5089,180,155,105
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE268,Kolkata,Bangalore,2025-01-21 05:15:00,2025-01-21 07:15:00,6566,160,149,120
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW269,Kolkata,Hyderabad,2024-01-20 05:45:00,2024-01-20 08:45:00,5280,190,161,180
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ270,Pune,Kolkata,2024-06-25 13:45:00,2024-06-25 16:15:00,5839,170,126,150
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI271,Mumbai,New Delhi,2024-08-17 10:30:00,2024-08-17 13:30:00,5150,170,158,180
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ272,Pune,Mumbai,2024-08-01 08:00:00,2024-08-01 10:45:00,6146,150,139,165
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW273,Kolkata,Mumbai,2024-04-23 08:00:00,2024-04-23 09:15:00,3866,150,131,75
+SkyWays,SW,Cochin International,Kochi,India,COK,SW274,Kochi,New Delhi,2025-01-14 08:15:00,2025-01-14 09:15:00,5946,150,123,60
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ275,Mumbai,Pune,2024-08-14 11:30:00,2024-08-14 12:30:00,6013,200,187,60
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW276,Hyderabad,Ahmedabad,2024-09-18 15:30:00,2024-09-18 17:45:00,2872,170,115,135
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ277,Goa,Pune,2024-07-26 06:45:00,2024-07-26 09:30:00,3203,200,178,165
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA278,New Delhi,Mumbai,2024-09-30 08:00:00,2024-09-30 10:15:00,6886,150,121,135
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ279,Bangalore,Kolkata,2024-10-30 09:30:00,2024-10-30 12:00:00,3742,150,104,150
+FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA280,Ahmedabad,Hyderabad,2024-12-31 18:30:00,2024-12-31 19:30:00,6195,160,122,60
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ281,Mumbai,Kolkata,2024-05-19 06:15:00,2024-05-19 08:45:00,3724,180,128,150
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE282,New Delhi,Bangalore,2024-04-06 20:45:00,2024-04-06 22:45:00,4405,190,148,120
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ283,New Delhi,Hyderabad,2025-01-11 18:30:00,2025-01-11 19:30:00,3303,180,147,60
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ284,Bangalore,Kochi,2024-12-13 12:15:00,2024-12-13 14:15:00,5565,170,125,120
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI285,Ahmedabad,Chennai,2024-02-23 15:30:00,2024-02-23 16:30:00,4917,180,152,60
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI286,Ahmedabad,Mumbai,2025-01-05 10:00:00,2025-01-05 11:00:00,5751,190,143,60
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW287,Hyderabad,Mumbai,2024-09-22 14:15:00,2024-09-22 16:00:00,5348,150,134,105
+FastAir,FA,Cochin International,Kochi,India,COK,FA288,Kochi,Ahmedabad,2024-07-16 18:00:00,2024-07-16 19:15:00,2368,180,131,75
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW289,Chennai,Kochi,2024-10-15 15:30:00,2024-10-15 18:30:00,2129,170,152,180
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW290,Hyderabad,Mumbai,2025-01-16 05:45:00,2025-01-16 07:00:00,6755,190,131,75
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI291,Mumbai,Bangalore,2024-10-08 17:30:00,2024-10-08 18:30:00,5221,200,164,60
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA292,Mumbai,Kochi,2024-10-15 13:30:00,2024-10-15 16:30:00,5324,180,154,180
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA293,Kolkata,Mumbai,2024-10-01 05:30:00,2024-10-01 08:30:00,2176,150,144,180
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE294,Ahmedabad,Goa,2024-05-23 15:30:00,2024-05-23 17:00:00,3103,170,136,90
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ295,Bangalore,Chennai,2024-01-13 18:00:00,2024-01-13 20:30:00,4576,150,123,150
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE296,Chennai,Ahmedabad,2024-09-20 08:30:00,2024-09-20 10:30:00,4129,180,148,120
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA297,Mumbai,New Delhi,2024-11-08 10:15:00,2024-11-08 12:00:00,2190,170,145,105
+TransIndia,TI,Goa International,Goa,India,GOI,TI298,Goa,Kolkata,2024-08-26 06:15:00,2024-08-26 09:15:00,4700,160,140,180
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ299,Kochi,Mumbai,2024-01-30 16:15:00,2024-01-30 18:45:00,3735,200,175,150
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ300,Bangalore,Goa,2024-05-17 17:30:00,2024-05-17 20:30:00,4038,180,167,180
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ301,Mumbai,Chennai,2024-08-13 11:00:00,2024-08-13 12:00:00,4103,190,155,60
+FastAir,FA,Pune International,Pune,India,PUN,FA302,Pune,Hyderabad,2024-12-15 05:45:00,2024-12-15 07:00:00,2018,160,111,75
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE303,Ahmedabad,Chennai,2024-12-24 11:00:00,2024-12-24 12:45:00,4312,190,132,105
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE304,Bangalore,New Delhi,2024-11-03 08:45:00,2024-11-03 11:45:00,2636,190,149,180
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ305,Bangalore,Mumbai,2024-05-29 16:45:00,2024-05-29 18:45:00,6933,180,135,120
+FastAir,FA,Cochin International,Kochi,India,COK,FA306,Kochi,Ahmedabad,2024-11-25 10:15:00,2024-11-25 13:15:00,3309,160,102,180
+SkyWays,SW,Goa International,Goa,India,GOI,SW307,Goa,Kochi,2024-10-28 09:00:00,2024-10-28 10:00:00,5197,160,116,60
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ308,Mumbai,Hyderabad,2024-11-09 15:00:00,2024-11-09 17:45:00,6769,150,145,165
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ309,Chennai,Kochi,2024-12-17 18:30:00,2024-12-17 20:30:00,6658,180,127,120
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI310,Bangalore,Kolkata,2024-06-10 19:45:00,2024-06-10 22:45:00,6102,200,158,180
+TransIndia,TI,Goa International,Goa,India,GOI,TI311,Goa,Kochi,2024-05-05 05:00:00,2024-05-05 07:00:00,5655,200,176,120
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW312,Chennai,Kolkata,2024-10-27 16:30:00,2024-10-27 19:30:00,3813,190,158,180
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE313,Ahmedabad,Pune,2024-03-19 16:30:00,2024-03-19 17:45:00,3287,200,148,75
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA314,Kolkata,Pune,2024-07-24 07:30:00,2024-07-24 10:30:00,4699,180,150,180
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ315,Ahmedabad,Goa,2024-10-29 12:15:00,2024-10-29 14:15:00,2241,160,120,120
+TransIndia,TI,Rajiv Gandhi International,Hyderabad,India,HYD,TI316,Hyderabad,Kochi,2024-12-20 07:15:00,2024-12-20 08:45:00,2452,170,164,90
+TransIndia,TI,Cochin International,Kochi,India,COK,TI317,Kochi,Hyderabad,2024-09-13 14:00:00,2024-09-13 15:00:00,4456,180,170,60
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW318,Hyderabad,Kolkata,2024-04-08 15:30:00,2024-04-08 17:00:00,2071,150,92,90
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ319,Bangalore,Ahmedabad,2024-03-15 15:30:00,2024-03-15 17:15:00,3413,180,126,105
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW320,Mumbai,New Delhi,2024-08-18 06:15:00,2024-08-18 08:30:00,2449,200,184,135
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ321,Pune,New Delhi,2024-05-30 13:00:00,2024-05-30 14:45:00,4716,200,159,105
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW322,New Delhi,Hyderabad,2024-04-24 14:00:00,2024-04-24 15:00:00,3580,200,150,60
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ323,Chennai,Bangalore,2024-09-22 18:30:00,2024-09-22 21:15:00,3182,160,121,165
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ324,Mumbai,Kolkata,2024-11-14 12:45:00,2024-11-14 15:30:00,3946,190,160,165
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA325,New Delhi,Mumbai,2024-09-04 08:30:00,2024-09-04 11:30:00,6210,160,138,180
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ326,Ahmedabad,Kochi,2024-08-26 08:15:00,2024-08-26 10:45:00,3798,160,129,150
+SkyWays,SW,Pune International,Pune,India,PUN,SW327,Pune,New Delhi,2024-11-03 16:30:00,2024-11-03 19:30:00,2779,160,160,180
+CloudJet,CJ,Rajiv Gandhi International,Hyderabad,India,HYD,CJ328,Hyderabad,Goa,2024-12-22 17:00:00,2024-12-22 18:45:00,4014,170,129,105
+SkyWays,SW,Pune International,Pune,India,PUN,SW329,Pune,Ahmedabad,2024-03-06 19:45:00,2024-03-06 21:00:00,4211,150,120,75
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE330,Mumbai,Bangalore,2024-07-15 20:30:00,2024-07-15 23:00:00,3839,200,162,150
+SkyWays,SW,Goa International,Goa,India,GOI,SW331,Goa,Kolkata,2024-05-17 16:30:00,2024-05-17 18:15:00,6196,150,103,105
+TransIndia,TI,Rajiv Gandhi International,Hyderabad,India,HYD,TI332,Hyderabad,Goa,2024-09-21 12:30:00,2024-09-21 14:00:00,3309,160,147,90
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA333,Bangalore,Kolkata,2024-05-30 10:00:00,2024-05-30 12:45:00,6644,180,177,165
+FastAir,FA,Cochin International,Kochi,India,COK,FA334,Kochi,Mumbai,2024-04-01 06:00:00,2024-04-01 07:00:00,6962,150,122,60
+FastAir,FA,Goa International,Goa,India,GOI,FA335,Goa,Chennai,2024-07-12 18:00:00,2024-07-12 19:45:00,5688,170,156,105
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE336,Hyderabad,New Delhi,2025-01-01 14:15:00,2025-01-01 16:15:00,5648,170,163,120
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ337,Goa,Mumbai,2025-01-09 20:45:00,2025-01-09 22:30:00,4152,180,150,105
+SkyWays,SW,Goa International,Goa,India,GOI,SW338,Goa,Ahmedabad,2024-05-26 12:15:00,2024-05-26 14:00:00,6164,150,125,105
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE339,Bangalore,Kolkata,2024-01-18 10:45:00,2024-01-18 12:45:00,3651,150,117,120
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE340,Hyderabad,Pune,2024-07-22 10:00:00,2024-07-22 11:45:00,3987,150,107,105
+FastAir,FA,Chennai International,Chennai,India,MAA,FA341,Chennai,Goa,2024-06-15 12:45:00,2024-06-15 15:45:00,5047,170,159,180
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW342,Chennai,Kochi,2024-08-25 16:15:00,2024-08-25 18:00:00,2913,150,114,105
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE343,Chennai,Kochi,2025-01-08 14:15:00,2025-01-08 15:45:00,3828,150,144,90
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ344,New Delhi,Hyderabad,2024-12-03 13:45:00,2024-12-03 16:30:00,2552,200,199,165
+CloudJet,CJ,Rajiv Gandhi International,Hyderabad,India,HYD,CJ345,Hyderabad,Mumbai,2025-01-11 08:00:00,2025-01-11 11:00:00,2255,170,125,180
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW346,Bangalore,Kochi,2024-04-25 10:45:00,2024-04-25 12:15:00,4079,170,131,90
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW347,Hyderabad,Ahmedabad,2024-10-29 19:45:00,2024-10-29 22:00:00,6422,200,198,135
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE348,Hyderabad,Chennai,2024-09-29 11:15:00,2024-09-29 13:45:00,4713,180,138,150
+TransIndia,TI,Pune International,Pune,India,PUN,TI349,Pune,Ahmedabad,2024-10-17 11:30:00,2024-10-17 13:15:00,6760,160,125,105
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW350,Bangalore,Chennai,2024-02-19 15:15:00,2024-02-19 18:15:00,4891,180,129,180
+FastAir,FA,Pune International,Pune,India,PUN,FA351,Pune,Goa,2024-09-24 13:45:00,2024-09-24 16:30:00,4816,190,144,165
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE352,Kolkata,Chennai,2024-03-19 15:15:00,2024-03-19 18:15:00,5821,150,117,180
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ353,Ahmedabad,Hyderabad,2024-03-11 17:30:00,2024-03-11 20:30:00,4032,200,195,180
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE354,New Delhi,Pune,2024-07-13 10:00:00,2024-07-13 11:45:00,2230,170,119,105
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI355,Mumbai,Ahmedabad,2024-12-13 12:45:00,2024-12-13 15:00:00,2728,180,139,135
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA356,New Delhi,Pune,2024-12-20 14:00:00,2024-12-20 16:30:00,5254,170,143,150
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ357,Pune,Mumbai,2024-04-08 15:30:00,2024-04-08 18:30:00,4358,180,153,180
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA358,Bangalore,Ahmedabad,2025-01-29 12:45:00,2025-01-29 15:15:00,3924,170,111,150
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ359,Kolkata,Hyderabad,2024-06-06 10:30:00,2024-06-06 13:00:00,2464,170,119,150
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA360,Mumbai,Pune,2025-01-23 19:15:00,2025-01-23 20:45:00,6635,180,162,90
+FastAir,FA,Cochin International,Kochi,India,COK,FA361,Kochi,Pune,2024-09-24 07:30:00,2024-09-24 08:45:00,6638,180,158,75
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ362,Ahmedabad,Kolkata,2024-09-02 13:15:00,2024-09-02 16:15:00,4284,190,130,180
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI363,Mumbai,Bangalore,2024-03-24 19:45:00,2024-03-24 21:45:00,3410,160,117,120
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA364,New Delhi,Kochi,2024-01-26 17:30:00,2024-01-26 19:45:00,5226,160,115,135
+CloudJet,CJ,Rajiv Gandhi International,Hyderabad,India,HYD,CJ365,Hyderabad,Kochi,2024-08-22 15:30:00,2024-08-22 16:45:00,6824,170,133,75
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI366,Kolkata,Goa,2024-04-21 12:45:00,2024-04-21 14:30:00,5084,150,150,105
+AeroExpress,AE,Goa International,Goa,India,GOI,AE367,Goa,Bangalore,2024-05-05 18:15:00,2024-05-05 20:15:00,6198,190,148,120
+FastAir,FA,Goa International,Goa,India,GOI,FA368,Goa,Kolkata,2024-04-26 18:45:00,2024-04-26 21:30:00,4551,160,126,165
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI369,Bangalore,Ahmedabad,2024-08-26 07:00:00,2024-08-26 09:15:00,2365,180,127,135
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW370,New Delhi,Hyderabad,2024-02-17 18:30:00,2024-02-17 21:15:00,3957,150,145,165
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA371,Hyderabad,Bangalore,2024-06-16 16:30:00,2024-06-16 18:15:00,3481,170,167,105
+SkyWays,SW,Goa International,Goa,India,GOI,SW372,Goa,Chennai,2024-10-25 18:15:00,2024-10-25 20:00:00,5112,170,159,105
+AeroExpress,AE,Pune International,Pune,India,PUN,AE373,Pune,Bangalore,2025-01-08 20:15:00,2025-01-08 21:45:00,3883,180,148,90
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ374,Pune,Chennai,2024-02-02 12:00:00,2024-02-02 14:15:00,6030,180,168,135
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ375,Kolkata,Ahmedabad,2024-03-11 13:15:00,2024-03-11 14:30:00,5058,200,151,75
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW376,Chennai,Hyderabad,2024-01-17 12:00:00,2024-01-17 14:15:00,4614,190,162,135
+FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA377,Ahmedabad,New Delhi,2024-03-31 05:45:00,2024-03-31 07:30:00,2199,190,169,105
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ378,Goa,New Delhi,2024-02-11 07:00:00,2024-02-11 10:00:00,3089,180,137,180
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE379,Ahmedabad,New Delhi,2024-08-28 13:15:00,2024-08-28 15:00:00,5420,170,115,105
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ380,New Delhi,Kolkata,2024-07-30 10:15:00,2024-07-30 11:45:00,6607,190,150,90
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ381,Kolkata,Pune,2024-05-24 17:45:00,2024-05-24 18:45:00,2374,150,99,60
+TransIndia,TI,Cochin International,Kochi,India,COK,TI382,Kochi,Chennai,2024-07-09 09:15:00,2024-07-09 10:45:00,3195,190,160,90
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ383,Goa,New Delhi,2024-07-29 08:00:00,2024-07-29 10:45:00,4669,200,144,165
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW384,New Delhi,Pune,2025-01-18 19:00:00,2025-01-18 21:30:00,5546,170,143,150
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE385,Ahmedabad,Goa,2024-04-02 20:00:00,2024-04-02 22:45:00,2231,150,105,165
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW386,Ahmedabad,Bangalore,2024-09-03 14:00:00,2024-09-03 16:45:00,4065,200,154,165
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA387,Bangalore,Pune,2024-03-16 18:45:00,2024-03-16 19:45:00,4772,160,160,60
+TransIndia,TI,Pune International,Pune,India,PUN,TI388,Pune,Mumbai,2024-02-16 13:15:00,2024-02-16 14:45:00,2050,180,131,90
+TransIndia,TI,Indira Gandhi International,New Delhi,India,DEL,TI389,New Delhi,Chennai,2024-11-22 14:00:00,2024-11-22 16:45:00,5632,200,148,165
+TransIndia,TI,Indira Gandhi International,New Delhi,India,DEL,TI390,New Delhi,Bangalore,2024-02-12 14:15:00,2024-02-12 17:00:00,6669,170,162,165
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW391,New Delhi,Kolkata,2025-01-27 18:30:00,2025-01-27 21:30:00,4377,160,103,180
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ392,Kochi,Chennai,2024-09-30 15:00:00,2024-09-30 16:45:00,6082,160,120,105
+SkyWays,SW,Cochin International,Kochi,India,COK,SW393,Kochi,Pune,2024-04-30 20:00:00,2024-04-30 22:00:00,3780,200,182,120
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA394,Hyderabad,Goa,2025-01-08 15:15:00,2025-01-08 16:30:00,3167,150,118,75
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI395,Mumbai,Goa,2024-12-27 13:45:00,2024-12-27 16:45:00,4139,150,100,180
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW396,Kolkata,Hyderabad,2024-01-09 16:00:00,2024-01-09 18:00:00,6449,170,120,120
+SkyWays,SW,Goa International,Goa,India,GOI,SW397,Goa,Kolkata,2024-10-02 20:45:00,2024-10-02 23:15:00,4984,150,110,150
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI398,Bangalore,Pune,2024-07-06 10:00:00,2024-07-06 11:15:00,5321,170,144,75
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ399,New Delhi,Pune,2024-03-07 19:30:00,2024-03-07 21:45:00,6246,180,144,135
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE400,Bangalore,Hyderabad,2024-04-18 06:30:00,2024-04-18 07:45:00,6205,200,149,75
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE401,New Delhi,Chennai,2024-12-18 06:00:00,2024-12-18 08:00:00,3832,190,182,120
+FastAir,FA,Goa International,Goa,India,GOI,FA402,Goa,Ahmedabad,2024-01-28 13:45:00,2024-01-28 15:30:00,4157,190,134,105
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ403,Kochi,Hyderabad,2024-12-19 06:00:00,2024-12-19 07:30:00,2323,180,129,90
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI404,Kolkata,Pune,2024-08-04 18:15:00,2024-08-04 20:15:00,5449,190,186,120
+FastAir,FA,Pune International,Pune,India,PUN,FA405,Pune,Kochi,2024-04-16 15:15:00,2024-04-16 17:00:00,2551,170,125,105
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA406,Bangalore,Pune,2024-03-14 09:45:00,2024-03-14 11:45:00,5285,190,137,120
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA407,Kolkata,Mumbai,2024-02-27 14:45:00,2024-02-27 16:00:00,3002,180,162,75
+FastAir,FA,Chennai International,Chennai,India,MAA,FA408,Chennai,Bangalore,2024-05-05 18:30:00,2024-05-05 19:30:00,6696,180,174,60
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA409,Kolkata,Pune,2024-06-10 12:30:00,2024-06-10 15:15:00,5134,180,127,165
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA410,New Delhi,Mumbai,2024-11-29 20:30:00,2024-11-29 22:45:00,3671,170,153,135
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI411,Chennai,Kochi,2024-05-04 05:15:00,2024-05-04 06:15:00,6263,190,176,60
+TransIndia,TI,Indira Gandhi International,New Delhi,India,DEL,TI412,New Delhi,Kochi,2024-01-30 18:45:00,2024-01-30 21:15:00,5821,190,147,150
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ413,Pune,Goa,2024-07-10 07:30:00,2024-07-10 10:15:00,6071,190,130,165
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW414,Hyderabad,Kochi,2024-04-20 17:30:00,2024-04-20 18:45:00,4105,180,139,75
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA415,New Delhi,Kolkata,2024-03-28 07:30:00,2024-03-28 09:15:00,2633,200,140,105
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ416,New Delhi,Goa,2025-01-27 19:15:00,2025-01-27 21:00:00,3130,190,156,105
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA417,Bangalore,New Delhi,2024-01-30 18:45:00,2024-01-30 20:15:00,2977,180,177,90
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ418,Pune,Mumbai,2025-01-24 05:30:00,2025-01-24 08:00:00,5579,200,200,150
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE419,Bangalore,Hyderabad,2024-01-10 06:45:00,2024-01-10 09:15:00,5221,160,156,150
+AeroExpress,AE,Goa International,Goa,India,GOI,AE420,Goa,Hyderabad,2024-03-28 06:45:00,2024-03-28 09:15:00,5650,170,149,150
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA421,Kolkata,Pune,2024-06-19 07:45:00,2024-06-19 10:15:00,6113,180,154,150
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE422,Kolkata,New Delhi,2024-09-05 18:15:00,2024-09-05 20:00:00,6544,180,158,105
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ423,Chennai,Bangalore,2024-06-16 19:30:00,2024-06-16 20:30:00,3966,170,126,60
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE424,New Delhi,Kolkata,2025-01-16 19:30:00,2025-01-16 22:00:00,4002,160,155,150
+SkyWays,SW,Goa International,Goa,India,GOI,SW425,Goa,Bangalore,2024-03-18 14:15:00,2024-03-18 15:15:00,3932,190,170,60
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ426,Mumbai,Pune,2024-07-06 18:45:00,2024-07-06 21:00:00,6755,170,142,135
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE427,Kolkata,Hyderabad,2025-01-30 17:45:00,2025-01-30 20:15:00,6457,150,144,150
+TransIndia,TI,Rajiv Gandhi International,Hyderabad,India,HYD,TI428,Hyderabad,Kochi,2024-11-01 06:30:00,2024-11-01 08:45:00,6717,160,105,135
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA429,Bangalore,Goa,2024-01-13 16:45:00,2024-01-13 19:45:00,4880,180,174,180
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE430,New Delhi,Ahmedabad,2024-11-30 08:15:00,2024-11-30 10:00:00,2675,160,152,105
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ431,Ahmedabad,Pune,2024-05-24 11:45:00,2024-05-24 14:15:00,3767,200,167,150
+SkyWays,SW,Goa International,Goa,India,GOI,SW432,Goa,Kochi,2024-07-28 10:00:00,2024-07-28 12:00:00,3541,170,169,120
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE433,Kolkata,Pune,2024-10-05 12:00:00,2024-10-05 14:00:00,2531,200,187,120
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW434,Ahmedabad,Bangalore,2024-12-08 18:15:00,2024-12-08 19:45:00,6963,190,163,90
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA435,Mumbai,Pune,2024-09-10 10:00:00,2024-09-10 11:00:00,6239,180,143,60
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE436,Mumbai,Ahmedabad,2024-02-04 15:30:00,2024-02-04 18:15:00,2451,180,124,165
+TransIndia,TI,Pune International,Pune,India,PUN,TI437,Pune,Hyderabad,2024-06-20 10:15:00,2024-06-20 12:30:00,5089,150,101,135
+SkyWays,SW,Cochin International,Kochi,India,COK,SW438,Kochi,Bangalore,2024-05-21 06:30:00,2024-05-21 08:15:00,4241,180,168,105
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ439,Goa,Ahmedabad,2024-08-07 13:30:00,2024-08-07 15:00:00,3647,150,137,90
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ440,Bangalore,Ahmedabad,2024-08-06 11:15:00,2024-08-06 13:15:00,4483,200,163,120
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE441,Hyderabad,Chennai,2024-04-21 19:30:00,2024-04-21 22:15:00,5860,200,197,165
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE442,Mumbai,Goa,2024-05-31 09:45:00,2024-05-31 11:30:00,5805,170,146,105
+SkyWays,SW,Goa International,Goa,India,GOI,SW443,Goa,Kolkata,2024-06-28 14:30:00,2024-06-28 16:15:00,6904,170,156,105
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ444,Chennai,Kochi,2024-04-05 08:00:00,2024-04-05 10:00:00,2403,170,163,120
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ445,Mumbai,Kolkata,2024-10-13 20:00:00,2024-10-13 22:15:00,3087,160,103,135
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA446,Kolkata,Mumbai,2024-09-14 07:00:00,2024-09-14 09:45:00,6018,190,180,165
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE447,Bangalore,Pune,2024-02-27 05:45:00,2024-02-27 08:30:00,4416,160,140,165
+TransIndia,TI,Cochin International,Kochi,India,COK,TI448,Kochi,Chennai,2024-10-03 20:00:00,2024-10-03 21:00:00,4384,160,127,60
+FastAir,FA,Pune International,Pune,India,PUN,FA449,Pune,Kolkata,2024-12-10 11:45:00,2024-12-10 12:45:00,6313,180,154,60
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW450,Chennai,Pune,2024-01-26 10:45:00,2024-01-26 11:45:00,6694,170,149,60
+FastAir,FA,Cochin International,Kochi,India,COK,FA451,Kochi,Ahmedabad,2024-05-18 07:00:00,2024-05-18 08:30:00,4947,160,145,90
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW452,Kolkata,Ahmedabad,2025-01-03 16:30:00,2025-01-03 18:15:00,5664,200,150,105
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI453,Bangalore,Kolkata,2024-07-02 08:30:00,2024-07-02 10:30:00,3396,180,143,120
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ454,New Delhi,Bangalore,2024-11-12 18:45:00,2024-11-12 21:00:00,2971,200,169,135
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI455,Bangalore,New Delhi,2025-01-07 10:45:00,2025-01-07 13:45:00,6828,190,151,180
+FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA456,Ahmedabad,Kochi,2024-06-07 15:30:00,2024-06-07 18:15:00,5525,170,129,165
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE457,Kochi,Pune,2024-07-03 06:15:00,2024-07-03 07:15:00,6212,170,155,60
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ458,Ahmedabad,Kochi,2024-02-06 11:30:00,2024-02-06 13:00:00,4290,160,131,90
+AeroExpress,AE,Goa International,Goa,India,GOI,AE459,Goa,Pune,2024-03-02 13:45:00,2024-03-02 15:30:00,4083,190,162,105
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA460,Bangalore,Kochi,2024-02-21 05:30:00,2024-02-21 07:15:00,3042,160,138,105
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ461,Kolkata,Hyderabad,2024-02-25 15:15:00,2024-02-25 17:15:00,6794,200,176,120
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ462,New Delhi,Goa,2024-11-27 17:45:00,2024-11-27 19:30:00,6374,170,134,105
+FastAir,FA,Pune International,Pune,India,PUN,FA463,Pune,Goa,2024-06-09 17:45:00,2024-06-09 20:00:00,2725,180,160,135
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ464,Mumbai,Ahmedabad,2025-01-11 10:15:00,2025-01-11 13:15:00,6161,160,155,180
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI465,Mumbai,Hyderabad,2024-10-08 05:00:00,2024-10-08 07:30:00,6575,190,182,150
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ466,Bangalore,Pune,2025-01-15 10:15:00,2025-01-15 11:15:00,4321,170,163,60
+CloudJet,CJ,Rajiv Gandhi International,Hyderabad,India,HYD,CJ467,Hyderabad,New Delhi,2024-08-12 13:15:00,2024-08-12 15:00:00,5451,190,133,105
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ468,Bangalore,Mumbai,2024-08-05 06:15:00,2024-08-05 08:45:00,5142,170,145,150
+AeroExpress,AE,Pune International,Pune,India,PUN,AE469,Pune,Mumbai,2024-12-08 07:00:00,2024-12-08 08:00:00,6767,150,101,60
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ470,Kolkata,Hyderabad,2024-06-28 19:45:00,2024-06-28 21:45:00,6095,150,101,120
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI471,Bangalore,Pune,2024-01-02 17:15:00,2024-01-02 19:15:00,5311,180,139,120
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ472,Bangalore,Mumbai,2024-08-06 05:30:00,2024-08-06 07:45:00,4029,190,170,135
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE473,Chennai,Goa,2024-08-14 07:30:00,2024-08-14 09:00:00,3182,150,143,90
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA474,Hyderabad,Kochi,2024-11-09 10:00:00,2024-11-09 11:15:00,2298,170,166,75
+TransIndia,TI,Rajiv Gandhi International,Hyderabad,India,HYD,TI475,Hyderabad,New Delhi,2025-01-24 05:45:00,2025-01-24 07:00:00,3465,160,138,75
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ476,New Delhi,Kochi,2024-10-19 09:45:00,2024-10-19 11:00:00,5284,160,131,75
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI477,Mumbai,New Delhi,2025-01-25 11:45:00,2025-01-25 13:00:00,6851,150,107,75
+FastAir,FA,Goa International,Goa,India,GOI,FA478,Goa,Kochi,2024-04-30 19:30:00,2024-04-30 22:00:00,3257,150,121,150
+TransIndia,TI,Goa International,Goa,India,GOI,TI479,Goa,Kochi,2025-01-11 09:15:00,2025-01-11 11:15:00,4119,190,139,120
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI480,Kolkata,Goa,2024-12-17 16:00:00,2024-12-17 17:00:00,3565,170,126,60
+TransIndia,TI,Indira Gandhi International,New Delhi,India,DEL,TI481,New Delhi,Goa,2024-11-23 15:30:00,2024-11-23 16:45:00,3773,180,161,75
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI482,Chennai,Mumbai,2024-02-07 13:15:00,2024-02-07 14:45:00,5440,190,160,90
+FastAir,FA,Cochin International,Kochi,India,COK,FA483,Kochi,Bangalore,2024-01-23 19:00:00,2024-01-23 20:30:00,4244,170,159,90
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ484,Mumbai,Kochi,2024-01-09 05:45:00,2024-01-09 07:45:00,4086,160,155,120
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ485,New Delhi,Ahmedabad,2024-08-15 08:00:00,2024-08-15 09:15:00,2794,200,180,75
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ486,Pune,Mumbai,2024-11-29 09:00:00,2024-11-29 11:15:00,6187,200,173,135
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE487,Kolkata,Goa,2024-07-13 07:15:00,2024-07-13 10:00:00,6643,180,130,165
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE488,Chennai,Mumbai,2024-05-25 09:30:00,2024-05-25 11:45:00,2389,150,143,135
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE489,Bangalore,Hyderabad,2024-11-08 19:45:00,2024-11-08 22:45:00,2161,160,137,180
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA490,Hyderabad,Chennai,2024-10-12 16:15:00,2024-10-12 17:15:00,6451,180,166,60
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW491,New Delhi,Kochi,2024-04-03 14:15:00,2024-04-03 16:00:00,3895,200,161,105
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ492,Kochi,Hyderabad,2024-04-04 09:15:00,2024-04-04 12:00:00,5347,190,131,165
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ493,New Delhi,Pune,2024-10-28 20:00:00,2024-10-28 21:45:00,2309,150,133,105
+TransIndia,TI,Indira Gandhi International,New Delhi,India,DEL,TI494,New Delhi,Kolkata,2024-06-25 17:15:00,2024-06-25 18:15:00,6232,200,140,60
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA495,Bangalore,Kolkata,2024-07-24 20:15:00,2024-07-24 21:45:00,2158,190,153,90
+CloudJet,CJ,Rajiv Gandhi International,Hyderabad,India,HYD,CJ496,Hyderabad,Bangalore,2024-12-12 19:00:00,2024-12-12 21:45:00,6414,190,162,165
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI497,Chennai,Goa,2024-10-05 17:45:00,2024-10-05 19:45:00,2607,170,118,120
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW498,Bangalore,New Delhi,2025-01-16 13:30:00,2025-01-16 15:30:00,3272,200,169,120
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW499,Chennai,Goa,2024-01-28 12:00:00,2024-01-28 14:45:00,5449,190,178,165
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ500,Kolkata,Kochi,2024-07-09 14:30:00,2024-07-09 16:45:00,2089,160,150,135
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ501,Bangalore,Pune,2024-12-14 15:15:00,2024-12-14 16:30:00,5801,190,138,75
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ502,Pune,Ahmedabad,2024-03-07 09:15:00,2024-03-07 11:45:00,3443,170,122,150
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA503,New Delhi,Kolkata,2025-01-30 12:00:00,2025-01-30 13:45:00,6273,180,173,105
+TransIndia,TI,Cochin International,Kochi,India,COK,TI504,Kochi,Goa,2024-01-07 20:30:00,2024-01-07 23:30:00,2271,190,141,180
+SkyWays,SW,Pune International,Pune,India,PUN,SW505,Pune,Chennai,2024-10-30 07:00:00,2024-10-30 09:00:00,5744,180,169,120
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ506,Kochi,Hyderabad,2025-01-22 17:45:00,2025-01-22 20:45:00,4795,180,123,180
+TransIndia,TI,Rajiv Gandhi International,Hyderabad,India,HYD,TI507,Hyderabad,Chennai,2024-12-01 15:00:00,2024-12-01 16:45:00,5763,190,163,105
+AeroExpress,AE,Goa International,Goa,India,GOI,AE508,Goa,Mumbai,2024-01-10 15:00:00,2024-01-10 18:00:00,2052,190,189,180
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW509,Hyderabad,Bangalore,2024-09-23 17:15:00,2024-09-23 20:15:00,4526,150,126,180
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI510,Chennai,Goa,2024-05-27 14:15:00,2024-05-27 16:00:00,2052,150,115,105
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE511,Ahmedabad,New Delhi,2024-08-12 08:30:00,2024-08-12 10:15:00,6798,190,136,105
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE512,Kolkata,Kochi,2024-12-10 12:15:00,2024-12-10 14:30:00,2286,190,147,135
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ513,Pune,Kolkata,2024-08-18 09:15:00,2024-08-18 11:00:00,3869,170,153,105
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE514,Kolkata,New Delhi,2024-09-21 20:15:00,2024-09-21 22:30:00,2854,180,126,135
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE515,Mumbai,Chennai,2024-01-14 06:30:00,2024-01-14 08:45:00,5828,200,166,135
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ516,New Delhi,Pune,2024-03-12 17:15:00,2024-03-12 19:45:00,6197,200,192,150
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE517,New Delhi,Hyderabad,2024-07-10 16:45:00,2024-07-10 19:30:00,6349,190,176,165
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA518,Mumbai,Chennai,2025-01-22 08:45:00,2025-01-22 11:15:00,2035,180,161,150
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA519,Kolkata,Chennai,2024-11-23 11:45:00,2024-11-23 14:00:00,5088,200,198,135
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA520,Mumbai,Hyderabad,2024-08-15 12:15:00,2024-08-15 13:30:00,3352,160,148,75
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA521,Hyderabad,Pune,2024-08-14 08:45:00,2024-08-14 10:00:00,4745,150,122,75
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ522,New Delhi,Pune,2024-02-14 20:45:00,2024-02-14 21:45:00,6776,170,155,60
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ523,Kolkata,Hyderabad,2024-06-20 05:15:00,2024-06-20 06:15:00,2635,180,154,60
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE524,New Delhi,Hyderabad,2025-01-03 13:15:00,2025-01-03 15:15:00,6736,170,117,120
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ525,Goa,Chennai,2024-07-29 13:15:00,2024-07-29 14:45:00,5831,160,152,90
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ526,Chennai,Hyderabad,2024-01-29 19:00:00,2024-01-29 21:15:00,6754,170,136,135
+FastAir,FA,Cochin International,Kochi,India,COK,FA527,Kochi,Mumbai,2024-03-07 09:15:00,2024-03-07 11:30:00,6121,200,145,135
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE528,New Delhi,Bangalore,2024-02-23 20:30:00,2024-02-23 23:30:00,2957,160,105,180
+TransIndia,TI,Indira Gandhi International,New Delhi,India,DEL,TI529,New Delhi,Hyderabad,2024-06-08 18:15:00,2024-06-08 20:45:00,4132,190,151,150
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE530,Mumbai,New Delhi,2024-12-30 15:00:00,2024-12-30 17:00:00,5892,160,141,120
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE531,Chennai,Bangalore,2024-04-09 14:30:00,2024-04-09 16:00:00,4301,200,188,90
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI532,Kolkata,Bangalore,2024-03-30 16:45:00,2024-03-30 19:45:00,2906,200,169,180
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI533,Kolkata,Kochi,2024-01-09 20:30:00,2024-01-09 22:45:00,6941,190,180,135
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ534,Mumbai,Ahmedabad,2024-11-03 19:45:00,2024-11-03 22:15:00,4404,160,123,150
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA535,Mumbai,Pune,2024-04-30 05:45:00,2024-04-30 08:15:00,5742,200,164,150
+SkyWays,SW,Goa International,Goa,India,GOI,SW536,Goa,Kolkata,2024-08-18 13:30:00,2024-08-18 16:15:00,4687,150,112,165
+FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA537,Ahmedabad,New Delhi,2024-03-30 13:15:00,2024-03-30 15:15:00,5383,170,153,120
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ538,Chennai,Kochi,2024-05-31 13:45:00,2024-05-31 15:30:00,3123,180,177,105
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE539,Kochi,Bangalore,2024-07-08 05:00:00,2024-07-08 06:15:00,2429,180,160,75
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW540,New Delhi,Goa,2024-10-11 15:45:00,2024-10-11 17:45:00,2664,170,135,120
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ541,Chennai,Hyderabad,2025-01-07 06:45:00,2025-01-07 08:15:00,3761,150,139,90
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE542,Kolkata,Goa,2024-08-28 17:00:00,2024-08-28 18:15:00,5592,190,190,75
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE543,Ahmedabad,Pune,2024-04-12 20:00:00,2024-04-12 21:15:00,6069,200,177,75
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI544,Chennai,Ahmedabad,2024-10-23 07:30:00,2024-10-23 10:15:00,5134,190,148,165
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI545,Ahmedabad,Mumbai,2024-09-22 09:00:00,2024-09-22 12:00:00,6413,160,103,180
+TransIndia,TI,Rajiv Gandhi International,Hyderabad,India,HYD,TI546,Hyderabad,Bangalore,2024-02-19 19:00:00,2024-02-19 20:45:00,4897,200,166,105
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE547,Ahmedabad,New Delhi,2024-12-29 10:15:00,2024-12-29 11:15:00,5239,150,90,60
+FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA548,Ahmedabad,Goa,2024-08-23 16:30:00,2024-08-23 19:00:00,4123,190,136,150
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE549,Kolkata,Ahmedabad,2024-06-11 14:00:00,2024-06-11 17:00:00,4679,160,104,180
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE550,Kochi,Mumbai,2024-08-28 08:00:00,2024-08-28 09:15:00,3326,190,139,75
+AeroExpress,AE,Pune International,Pune,India,PUN,AE551,Pune,Kochi,2025-01-14 15:30:00,2025-01-14 18:00:00,3520,190,176,150
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW552,New Delhi,Ahmedabad,2024-05-13 06:00:00,2024-05-13 08:15:00,2076,180,160,135
+TransIndia,TI,Goa International,Goa,India,GOI,TI553,Goa,Kolkata,2024-11-14 13:15:00,2024-11-14 15:30:00,5985,180,174,135
+FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA554,Ahmedabad,Mumbai,2024-03-07 18:15:00,2024-03-07 20:45:00,2821,180,153,150
+TransIndia,TI,Cochin International,Kochi,India,COK,TI555,Kochi,Ahmedabad,2024-05-29 17:45:00,2024-05-29 19:15:00,4521,180,154,90
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA556,Hyderabad,Goa,2024-02-27 17:30:00,2024-02-27 20:30:00,2557,180,168,180
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI557,Ahmedabad,Mumbai,2025-01-15 12:45:00,2025-01-15 14:45:00,4839,150,107,120
+SkyWays,SW,Goa International,Goa,India,GOI,SW558,Goa,New Delhi,2024-08-16 09:15:00,2024-08-16 12:00:00,4942,200,161,165
+FastAir,FA,Goa International,Goa,India,GOI,FA559,Goa,Pune,2024-11-18 12:45:00,2024-11-18 15:30:00,2245,190,131,165
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA560,Mumbai,Hyderabad,2024-07-17 17:15:00,2024-07-17 19:45:00,3769,200,185,150
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ561,Chennai,Ahmedabad,2024-05-10 13:45:00,2024-05-10 16:15:00,3573,160,143,150
+TransIndia,TI,Indira Gandhi International,New Delhi,India,DEL,TI562,New Delhi,Hyderabad,2024-11-03 13:15:00,2024-11-03 16:00:00,3964,190,180,165
+AeroExpress,AE,Pune International,Pune,India,PUN,AE563,Pune,Chennai,2024-02-17 16:15:00,2024-02-17 19:00:00,5088,180,127,165
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE564,Kochi,Goa,2025-01-01 14:15:00,2025-01-01 17:00:00,5590,160,106,165
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ565,Pune,Goa,2024-08-08 13:15:00,2024-08-08 14:30:00,5994,170,146,75
+TransIndia,TI,Cochin International,Kochi,India,COK,TI566,Kochi,Hyderabad,2024-03-30 08:15:00,2024-03-30 10:15:00,4254,190,130,120
+FastAir,FA,Pune International,Pune,India,PUN,FA567,Pune,Hyderabad,2025-01-25 15:15:00,2025-01-25 17:45:00,6090,200,142,150
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI568,Chennai,Bangalore,2024-03-22 11:15:00,2024-03-22 12:45:00,2472,150,148,90
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW569,Kolkata,Ahmedabad,2024-05-11 14:45:00,2024-05-11 16:15:00,4634,180,174,90
+TransIndia,TI,Pune International,Pune,India,PUN,TI570,Pune,Bangalore,2025-01-14 06:15:00,2025-01-14 08:45:00,3853,160,129,150
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE571,New Delhi,Kochi,2024-05-12 20:45:00,2024-05-12 23:00:00,5029,180,130,135
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI572,Mumbai,Hyderabad,2024-01-26 08:30:00,2024-01-26 09:30:00,5253,180,128,60
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW573,Mumbai,Bangalore,2024-02-28 15:00:00,2024-02-28 17:45:00,5599,160,112,165
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE574,Hyderabad,Mumbai,2024-11-04 07:00:00,2024-11-04 09:30:00,3596,150,114,150
+FastAir,FA,Goa International,Goa,India,GOI,FA575,Goa,New Delhi,2024-06-29 05:30:00,2024-06-29 08:15:00,2306,160,118,165
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ576,Mumbai,Goa,2024-07-24 11:15:00,2024-07-24 13:45:00,2229,180,153,150
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW577,Ahmedabad,Pune,2024-01-22 09:15:00,2024-01-22 10:15:00,5472,170,142,60
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ578,Bangalore,Kolkata,2024-05-06 16:00:00,2024-05-06 17:30:00,3355,160,129,90
+FastAir,FA,Goa International,Goa,India,GOI,FA579,Goa,Mumbai,2024-04-05 10:30:00,2024-04-05 12:30:00,2045,170,149,120
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ580,Kochi,New Delhi,2024-04-14 16:15:00,2024-04-14 19:00:00,6870,200,180,165
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ581,Bangalore,Pune,2024-11-09 18:15:00,2024-11-09 19:15:00,2338,200,191,60
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW582,Chennai,Ahmedabad,2024-08-22 09:45:00,2024-08-22 11:00:00,3886,190,180,75
+TransIndia,TI,Cochin International,Kochi,India,COK,TI583,Kochi,Ahmedabad,2024-05-12 11:45:00,2024-05-12 14:45:00,5550,180,156,180
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA584,Kolkata,New Delhi,2024-04-19 15:30:00,2024-04-19 16:45:00,6602,150,100,75
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE585,Kolkata,Hyderabad,2024-07-13 17:30:00,2024-07-13 19:15:00,2982,190,149,105
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ586,Kolkata,Goa,2024-08-17 15:00:00,2024-08-17 17:00:00,6112,190,146,120
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE587,Mumbai,Kolkata,2024-03-02 13:30:00,2024-03-02 14:30:00,2594,200,170,60
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE588,Bangalore,Chennai,2024-03-17 16:45:00,2024-03-17 19:00:00,5895,160,136,135
+TransIndia,TI,Rajiv Gandhi International,Hyderabad,India,HYD,TI589,Hyderabad,Ahmedabad,2024-05-17 13:30:00,2024-05-17 16:30:00,3613,180,157,180
+TransIndia,TI,Cochin International,Kochi,India,COK,TI590,Kochi,Kolkata,2025-01-14 18:15:00,2025-01-14 20:45:00,2310,150,97,150
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ591,Mumbai,Bangalore,2024-01-01 16:30:00,2024-01-01 17:30:00,3514,150,91,60
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA592,Mumbai,New Delhi,2024-08-22 15:45:00,2024-08-22 16:45:00,2724,190,172,60
+SkyWays,SW,Goa International,Goa,India,GOI,SW593,Goa,Kolkata,2024-05-09 19:45:00,2024-05-09 22:45:00,3148,180,120,180
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ594,Kolkata,Kochi,2024-07-29 08:45:00,2024-07-29 09:45:00,2988,170,121,60
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ595,Ahmedabad,Chennai,2024-03-11 06:30:00,2024-03-11 09:00:00,4460,180,137,150
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ596,Ahmedabad,Goa,2024-05-11 14:15:00,2024-05-11 16:00:00,2450,150,121,105
+FastAir,FA,Goa International,Goa,India,GOI,FA597,Goa,Chennai,2025-01-17 09:30:00,2025-01-17 10:45:00,5336,200,169,75
+TransIndia,TI,Pune International,Pune,India,PUN,TI598,Pune,Ahmedabad,2024-01-28 18:00:00,2024-01-28 19:15:00,2886,170,164,75
+TransIndia,TI,Goa International,Goa,India,GOI,TI599,Goa,Pune,2024-08-07 13:15:00,2024-08-07 15:30:00,3937,160,102,135
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ394,Pune,Mumbai,2026-12-21 18:15:00,2026-12-21 20:45:00,7807,150,139,150
+TransIndia,TI,Pune International,Pune,India,PUN,TI552,Pune,Hyderabad,2026-12-25 05:00:00,2026-12-25 08:00:00,4759,190,153,180
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW129,Mumbai,Ahmedabad,2026-12-08 07:30:00,2026-12-08 08:30:00,7737,200,131,60
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW471,New Delhi,Kolkata,2026-12-08 18:00:00,2026-12-08 19:00:00,7016,160,139,60
+TransIndia,TI,Goa International,Goa,India,GOI,TI956,Goa,Mumbai,2026-12-17 17:00:00,2026-12-17 18:45:00,7695,180,111,105
+TransIndia,TI,Pune International,Pune,India,PUN,TI160,Pune,New Delhi,2026-12-16 14:45:00,2026-12-16 15:45:00,4172,170,168,60
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA745,Mumbai,Chennai,2026-12-29 12:15:00,2026-12-29 14:30:00,8460,180,105,135
+SkyWays,SW,Goa International,Goa,India,GOI,SW828,Goa,Mumbai,2026-12-09 10:45:00,2026-12-09 13:15:00,4082,160,102,150
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE758,New Delhi,Mumbai,2026-12-18 13:30:00,2026-12-18 16:30:00,7218,160,124,180
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW176,Chennai,New Delhi,2026-12-11 22:15:00,2026-12-11 23:45:00,2346,160,139,90
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW339,Ahmedabad,Hyderabad,2026-12-11 14:45:00,2026-12-11 15:45:00,6738,200,154,60
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ206,Kolkata,Mumbai,2026-12-10 15:15:00,2026-12-10 17:30:00,5638,190,177,135
+AeroExpress,AE,Goa International,Goa,India,GOI,AE697,Goa,New Delhi,2026-12-18 07:45:00,2026-12-18 09:00:00,8711,200,127,75
+AeroExpress,AE,Pune International,Pune,India,PUN,AE971,Pune,Mumbai,2026-12-02 07:15:00,2026-12-02 09:15:00,2625,150,122,120
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ931,Ahmedabad,Bangalore,2026-12-22 12:45:00,2026-12-22 14:30:00,6686,160,110,105
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ972,Goa,Ahmedabad,2026-12-02 20:15:00,2026-12-02 22:30:00,4243,150,137,135
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ471,New Delhi,Mumbai,2026-12-09 21:00:00,2026-12-09 23:15:00,6768,200,139,135
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE972,Bangalore,Pune,2026-12-11 07:15:00,2026-12-11 09:15:00,4792,170,127,120
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA962,Hyderabad,Pune,2026-12-15 13:45:00,2026-12-15 15:30:00,5994,160,102,105
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW389,Chennai,Kochi,2026-12-28 21:15:00,2026-12-28 22:15:00,7841,170,113,60
+FastAir,FA,Chennai International,Chennai,India,MAA,FA201,Chennai,Kolkata,2026-12-03 21:15:00,2026-12-03 23:15:00,7722,170,170,120
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE115,Hyderabad,Mumbai,2026-12-16 10:30:00,2026-12-16 13:30:00,5068,150,127,180
+AeroExpress,AE,Goa International,Goa,India,GOI,AE230,Goa,Chennai,2026-12-09 12:45:00,2026-12-09 14:45:00,2874,200,196,120
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI848,Chennai,Ahmedabad,2026-12-30 12:15:00,2026-12-30 15:00:00,5297,160,140,165
+CloudJet,CJ,Rajiv Gandhi International,Hyderabad,India,HYD,CJ525,Hyderabad,Chennai,2026-12-11 20:00:00,2026-12-11 21:30:00,4048,180,124,90
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ947,New Delhi,Goa,2026-12-26 19:15:00,2026-12-26 21:15:00,4253,150,135,120
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI417,Bangalore,Kolkata,2026-12-04 22:45:00,2026-12-05 01:00:00,6282,170,166,135
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ903,Mumbai,Chennai,2026-12-07 05:45:00,2026-12-07 07:30:00,5476,190,137,105
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW920,Chennai,Mumbai,2026-12-31 22:45:00,2027-01-01 01:45:00,6451,200,143,180
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW916,Ahmedabad,Bangalore,2026-12-17 05:45:00,2026-12-17 06:45:00,3364,160,151,60
+FastAir,FA,Chennai International,Chennai,India,MAA,FA597,Chennai,New Delhi,2026-12-22 17:00:00,2026-12-22 20:00:00,6328,170,157,180
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI767,Ahmedabad,Kochi,2026-12-31 17:15:00,2026-12-31 19:30:00,5025,160,129,135
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ274,Chennai,Goa,2026-12-21 19:00:00,2026-12-21 20:00:00,2409,170,151,60
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA624,Kolkata,Chennai,2026-12-11 21:45:00,2026-12-11 23:45:00,4847,160,120,120
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI306,Bangalore,Mumbai,2026-12-05 12:15:00,2026-12-05 14:30:00,8358,150,72,135
+TransIndia,TI,Cochin International,Kochi,India,COK,TI735,Kochi,New Delhi,2026-12-12 14:00:00,2026-12-12 16:15:00,8952,180,125,135
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE181,Bangalore,Mumbai,2026-12-25 10:30:00,2026-12-25 12:30:00,6927,150,144,120
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ941,Kochi,Kolkata,2026-12-22 11:45:00,2026-12-22 13:00:00,5451,200,189,75
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE954,Mumbai,Bangalore,2026-12-29 18:30:00,2026-12-29 20:00:00,3193,170,100,90
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ838,Mumbai,Hyderabad,2026-12-10 14:30:00,2026-12-10 17:00:00,4066,200,165,150
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA391,Mumbai,Bangalore,2026-12-11 14:30:00,2026-12-11 16:30:00,5500,200,191,120
+TransIndia,TI,Goa International,Goa,India,GOI,TI108,Goa,Ahmedabad,2026-12-12 09:45:00,2026-12-12 11:30:00,6397,200,133,105
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI135,Bangalore,Kolkata,2026-12-08 10:15:00,2026-12-08 12:15:00,3106,160,160,120
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA498,Hyderabad,Bangalore,2026-12-16 20:00:00,2026-12-16 21:45:00,5917,200,163,105
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA200,New Delhi,Mumbai,2026-12-20 14:45:00,2026-12-20 16:00:00,5691,150,128,75
+AeroExpress,AE,Pune International,Pune,India,PUN,AE720,Pune,New Delhi,2026-12-11 08:30:00,2026-12-11 11:30:00,8869,200,180,180
+TransIndia,TI,Cochin International,Kochi,India,COK,TI586,Kochi,Pune,2026-12-08 22:00:00,2026-12-08 23:00:00,5615,170,109,60
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW653,Chennai,Ahmedabad,2026-12-01 17:30:00,2026-12-01 20:30:00,6749,180,102,180
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ123,Ahmedabad,Mumbai,2026-12-02 08:45:00,2026-12-02 10:00:00,3930,200,197,75
+TransIndia,TI,Cochin International,Kochi,India,COK,TI480,Kochi,Goa,2026-12-12 06:45:00,2026-12-12 08:15:00,6221,160,88,90
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW659,Ahmedabad,Bangalore,2026-12-17 20:45:00,2026-12-17 23:15:00,6804,170,121,150
+SkyWays,SW,Cochin International,Kochi,India,COK,SW989,Kochi,Bangalore,2026-12-10 10:15:00,2026-12-10 12:00:00,2983,170,155,105
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW923,Mumbai,Bangalore,2026-12-05 18:00:00,2026-12-05 20:15:00,2314,160,139,135
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW699,Mumbai,Goa,2026-12-11 15:15:00,2026-12-11 17:15:00,6656,160,149,120
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA500,Mumbai,Hyderabad,2026-12-24 22:00:00,2026-12-24 23:30:00,2319,160,140,90
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ193,New Delhi,Ahmedabad,2026-12-11 15:45:00,2026-12-11 17:45:00,4089,200,126,120
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA489,Kolkata,Mumbai,2026-12-02 21:30:00,2026-12-02 22:30:00,6911,160,122,60
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE576,Hyderabad,Kochi,2026-12-25 06:30:00,2026-12-25 08:30:00,6743,170,140,120
+TransIndia,TI,Pune International,Pune,India,PUN,TI664,Pune,Goa,2026-12-17 13:00:00,2026-12-17 14:15:00,8656,150,118,75
+AeroExpress,AE,Goa International,Goa,India,GOI,AE958,Goa,Chennai,2026-12-06 17:00:00,2026-12-06 20:00:00,8448,200,158,180
+FastAir,FA,Rajiv Gandhi International,Hyderabad,India,HYD,FA497,Hyderabad,Kochi,2026-12-31 16:30:00,2026-12-31 19:00:00,2224,200,153,150
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW753,Ahmedabad,Pune,2026-12-30 16:30:00,2026-12-30 17:30:00,4818,170,159,60
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ356,Goa,Kochi,2026-12-20 05:00:00,2026-12-20 06:00:00,4234,200,156,60
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW993,Hyderabad,Goa,2026-12-18 09:00:00,2026-12-18 11:15:00,7704,200,169,135
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE132,Kolkata,Ahmedabad,2026-12-24 13:30:00,2026-12-24 16:00:00,3568,160,141,150
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ168,Kolkata,Pune,2026-12-09 13:30:00,2026-12-09 16:00:00,7345,160,142,150
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI517,Kolkata,Goa,2026-12-11 14:45:00,2026-12-11 17:00:00,5155,190,138,135
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ421,Pune,Hyderabad,2026-12-21 06:15:00,2026-12-21 07:45:00,5241,190,167,90
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE142,Bangalore,Ahmedabad,2026-12-16 06:00:00,2026-12-16 09:00:00,6790,160,136,180
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI836,Ahmedabad,Pune,2026-12-26 18:15:00,2026-12-26 19:45:00,8360,200,124,90
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA331,Bangalore,Ahmedabad,2026-12-26 20:15:00,2026-12-26 23:15:00,4509,200,154,180
+AeroExpress,AE,Pune International,Pune,India,PUN,AE891,Pune,Ahmedabad,2026-12-31 10:15:00,2026-12-31 11:45:00,6882,160,136,90
+TransIndia,TI,Pune International,Pune,India,PUN,TI503,Pune,Goa,2026-12-27 11:30:00,2026-12-27 13:00:00,7218,190,131,90
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA891,Mumbai,Chennai,2026-12-01 11:00:00,2026-12-01 13:00:00,2458,180,151,120
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE591,Kochi,Pune,2026-12-06 13:00:00,2026-12-06 14:15:00,8706,160,92,75
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ423,Pune,Bangalore,2026-12-28 13:30:00,2026-12-28 16:00:00,6985,160,95,150
+AeroExpress,AE,Goa International,Goa,India,GOI,AE614,Goa,Kolkata,2026-12-02 22:15:00,2026-12-03 01:15:00,4173,160,116,180
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI142,Chennai,Hyderabad,2026-12-07 07:30:00,2026-12-07 09:00:00,4565,170,96,90
+FastAir,FA,Goa International,Goa,India,GOI,FA810,Goa,Hyderabad,2026-12-07 17:45:00,2026-12-07 19:30:00,5015,170,95,105
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE115,Mumbai,Kochi,2026-12-18 20:15:00,2026-12-18 22:15:00,7145,200,197,120
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ451,Bangalore,Hyderabad,2026-12-16 20:00:00,2026-12-16 21:45:00,5815,160,114,105
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE174,Mumbai,Kolkata,2026-12-08 06:30:00,2026-12-08 07:30:00,4675,170,132,60
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA803,Mumbai,Kochi,2026-12-06 19:45:00,2026-12-06 20:45:00,2610,150,93,60
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW697,Bangalore,Pune,2026-12-27 05:15:00,2026-12-27 07:30:00,3914,200,153,135
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI828,Mumbai,Goa,2026-12-20 12:45:00,2026-12-20 14:00:00,8105,190,168,75
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW629,Bangalore,Mumbai,2026-12-31 13:45:00,2026-12-31 16:45:00,4929,170,161,180
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ794,Ahmedabad,New Delhi,2026-12-05 20:15:00,2026-12-05 21:30:00,5633,190,117,75
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ351,New Delhi,Chennai,2026-12-31 12:45:00,2026-12-31 13:45:00,3011,170,101,60
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE641,New Delhi,Ahmedabad,2026-12-26 05:30:00,2026-12-26 07:15:00,2522,150,145,105
+FastAir,FA,Pune International,Pune,India,PUN,FA586,Pune,Chennai,2026-12-27 06:45:00,2026-12-27 09:30:00,7415,190,182,165
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI549,Kolkata,Bangalore,2026-12-21 16:00:00,2026-12-21 17:30:00,7036,160,94,90
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ342,Kochi,Pune,2026-12-24 17:45:00,2026-12-24 20:30:00,7749,180,161,165
+TransIndia,TI,Goa International,Goa,India,GOI,TI146,Goa,Mumbai,2026-12-25 10:45:00,2026-12-25 13:00:00,7740,180,167,135
+SkyWays,SW,Pune International,Pune,India,PUN,SW800,Pune,Mumbai,2026-12-10 11:15:00,2026-12-10 13:45:00,6426,190,158,150
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW409,New Delhi,Kochi,2026-12-15 20:45:00,2026-12-15 23:30:00,6264,150,144,165
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE233,Mumbai,Chennai,2026-12-20 05:45:00,2026-12-20 07:00:00,8886,180,110,75
+SkyWays,SW,Cochin International,Kochi,India,COK,SW232,Kochi,Chennai,2026-12-18 09:45:00,2026-12-18 12:00:00,6953,170,167,135
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE374,Hyderabad,Ahmedabad,2026-12-16 18:45:00,2026-12-16 20:30:00,6279,190,179,105
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI398,Mumbai,Kochi,2026-12-03 17:00:00,2026-12-03 18:45:00,3857,180,171,105
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE339,Bangalore,Goa,2026-12-15 06:15:00,2026-12-15 09:15:00,6917,190,150,180
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE761,Chennai,Kochi,2026-12-04 11:45:00,2026-12-04 14:15:00,3593,180,132,150
+FastAir,FA,Chennai International,Chennai,India,MAA,FA290,Chennai,Ahmedabad,2026-12-30 11:30:00,2026-12-30 14:15:00,7213,200,145,165
+FastAir,FA,Chennai International,Chennai,India,MAA,FA539,Chennai,Mumbai,2026-12-19 21:30:00,2026-12-19 23:45:00,6899,150,119,135
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW471,Mumbai,Hyderabad,2026-12-07 06:15:00,2026-12-07 08:30:00,8274,200,178,135
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI533,Ahmedabad,Kochi,2026-12-07 20:15:00,2026-12-07 23:15:00,3335,190,161,180
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI985,Bangalore,Kochi,2026-12-25 07:00:00,2026-12-25 09:30:00,8481,170,165,150
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW550,Hyderabad,Kolkata,2026-12-10 05:15:00,2026-12-10 06:45:00,8611,200,167,90
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE503,Ahmedabad,Pune,2026-12-29 08:00:00,2026-12-29 09:30:00,3187,200,197,90
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE947,Kochi,Pune,2026-12-28 13:45:00,2026-12-28 16:00:00,6201,150,124,135
+SkyWays,SW,Pune International,Pune,India,PUN,SW953,Pune,Ahmedabad,2026-12-14 08:30:00,2026-12-14 10:45:00,4799,150,94,135
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI468,Bangalore,Kochi,2026-12-30 10:15:00,2026-12-30 12:15:00,6375,190,152,120
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI659,Ahmedabad,Goa,2026-12-16 17:30:00,2026-12-16 19:45:00,3191,150,91,135
+TransIndia,TI,Cochin International,Kochi,India,COK,TI646,Kochi,Hyderabad,2026-12-13 22:30:00,2026-12-14 00:00:00,4022,170,135,90
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW199,Mumbai,New Delhi,2026-12-21 13:30:00,2026-12-21 15:15:00,6442,200,194,105
+TransIndia,TI,Indira Gandhi International,New Delhi,India,DEL,TI569,New Delhi,Bangalore,2026-12-24 14:00:00,2026-12-24 15:00:00,6636,170,107,60
+FastAir,FA,Chennai International,Chennai,India,MAA,FA783,Chennai,Goa,2026-12-04 21:15:00,2026-12-05 00:15:00,3686,190,162,180
+SkyWays,SW,Indira Gandhi International,New Delhi,India,DEL,SW142,New Delhi,Kochi,2026-12-06 10:45:00,2026-12-06 11:45:00,4252,170,125,60
+FastAir,FA,Indira Gandhi International,New Delhi,India,DEL,FA131,New Delhi,Kolkata,2026-12-10 17:00:00,2026-12-10 18:00:00,7562,170,162,60
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE332,Mumbai,New Delhi,2026-12-07 21:45:00,2026-12-07 22:45:00,4447,170,121,60
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW384,Mumbai,Pune,2026-12-20 14:30:00,2026-12-20 16:15:00,2989,150,121,105
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW606,Ahmedabad,Pune,2026-12-24 11:00:00,2026-12-24 12:00:00,5429,150,102,60
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE894,Kochi,Hyderabad,2026-12-26 12:15:00,2026-12-26 13:30:00,6991,150,111,75
+SkyWays,SW,Pune International,Pune,India,PUN,SW410,Pune,Ahmedabad,2026-12-15 20:00:00,2026-12-15 23:00:00,7169,190,172,180
+AeroExpress,AE,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,AE867,Kolkata,Hyderabad,2026-12-14 10:15:00,2026-12-14 12:00:00,8575,200,186,105
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ551,Ahmedabad,Mumbai,2026-12-27 17:45:00,2026-12-27 20:30:00,7655,160,113,165
+SkyWays,SW,Pune International,Pune,India,PUN,SW548,Pune,Kolkata,2026-12-07 16:00:00,2026-12-07 18:30:00,7288,180,101,150
+FastAir,FA,Kempegowda International,Bangalore,India,BLR,FA195,Bangalore,New Delhi,2026-12-29 10:45:00,2026-12-29 12:00:00,7177,170,124,75
+SkyWays,SW,Kempegowda International,Bangalore,India,BLR,SW446,Bangalore,Kochi,2026-12-21 19:00:00,2026-12-21 21:00:00,4211,190,188,120
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ362,Pune,Kochi,2026-12-26 13:00:00,2026-12-26 14:45:00,5606,150,107,105
+AeroExpress,AE,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,AE757,Ahmedabad,Kolkata,2026-12-16 12:45:00,2026-12-16 14:00:00,3504,180,137,75
+CloudJet,CJ,Kempegowda International,Bangalore,India,BLR,CJ606,Bangalore,Ahmedabad,2026-12-20 14:30:00,2026-12-20 17:00:00,2745,180,117,150
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW566,Ahmedabad,Hyderabad,2026-12-02 06:30:00,2026-12-02 07:30:00,4221,150,116,60
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI826,Ahmedabad,Mumbai,2026-12-29 19:45:00,2026-12-29 21:00:00,5631,200,148,75
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW772,Mumbai,Kochi,2026-12-16 21:15:00,2026-12-16 22:15:00,8936,160,149,60
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW990,Hyderabad,Pune,2026-12-10 12:30:00,2026-12-10 14:45:00,6420,200,189,135
+TransIndia,TI,Pune International,Pune,India,PUN,TI218,Pune,Kolkata,2026-12-16 13:00:00,2026-12-16 16:00:00,3021,160,153,180
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ578,Goa,Pune,2026-12-18 22:00:00,2026-12-18 23:15:00,5325,160,103,75
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW970,Hyderabad,Mumbai,2026-12-01 20:00:00,2026-12-01 21:00:00,6206,150,143,60
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW290,Ahmedabad,Bangalore,2026-12-03 17:15:00,2026-12-03 18:45:00,3702,180,109,90
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI290,Ahmedabad,Mumbai,2026-12-13 11:30:00,2026-12-13 13:30:00,4755,180,117,120
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ460,Mumbai,Hyderabad,2026-12-14 20:00:00,2026-12-14 22:00:00,4922,150,75,120
+CloudJet,CJ,Indira Gandhi International,New Delhi,India,DEL,CJ511,New Delhi,Ahmedabad,2026-12-06 22:45:00,2026-12-07 00:30:00,8304,160,138,105
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA930,Mumbai,Ahmedabad,2026-12-16 12:00:00,2026-12-16 14:15:00,5235,160,112,135
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ537,Goa,Pune,2026-12-20 05:15:00,2026-12-20 06:15:00,6641,160,130,60
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE948,Mumbai,Ahmedabad,2026-12-24 06:30:00,2026-12-24 07:45:00,6619,170,139,75
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE557,Chennai,Bangalore,2026-12-27 21:00:00,2026-12-27 22:00:00,2196,190,190,60
+AeroExpress,AE,Goa International,Goa,India,GOI,AE354,Goa,Chennai,2026-12-15 13:00:00,2026-12-15 16:00:00,3861,190,171,180
+FastAir,FA,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,FA191,Kolkata,New Delhi,2026-12-10 20:30:00,2026-12-10 23:00:00,6600,180,152,150
+AeroExpress,AE,Indira Gandhi International,New Delhi,India,DEL,AE707,New Delhi,Kolkata,2026-12-06 22:00:00,2026-12-07 00:30:00,6436,170,151,150
+SkyWays,SW,Goa International,Goa,India,GOI,SW680,Goa,Bangalore,2026-12-25 15:00:00,2026-12-25 16:00:00,8212,200,181,60
+AeroExpress,AE,Rajiv Gandhi International,Hyderabad,India,HYD,AE202,Hyderabad,New Delhi,2026-12-21 22:45:00,2026-12-22 00:15:00,7022,200,196,90
+SkyWays,SW,Rajiv Gandhi International,Hyderabad,India,HYD,SW309,Hyderabad,Mumbai,2026-12-11 05:00:00,2026-12-11 07:15:00,2001,200,182,135
+CloudJet,CJ,Rajiv Gandhi International,Hyderabad,India,HYD,CJ626,Hyderabad,Kolkata,2026-12-20 09:15:00,2026-12-20 10:45:00,3132,150,73,90
+SkyWays,SW,Goa International,Goa,India,GOI,SW268,Goa,Pune,2026-12-21 13:30:00,2026-12-21 14:45:00,2338,190,130,75
+FastAir,FA,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,FA406,Ahmedabad,Chennai,2026-12-21 12:45:00,2026-12-21 15:30:00,7092,200,181,165
+TransIndia,TI,Pune International,Pune,India,PUN,TI186,Pune,Goa,2026-12-09 22:00:00,2026-12-10 00:15:00,2183,190,121,135
+CloudJet,CJ,Chhatrapati Shivaji International,Mumbai,India,BOM,CJ845,Mumbai,Pune,2026-12-05 10:30:00,2026-12-05 11:45:00,6351,180,172,75
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ510,Ahmedabad,Kochi,2026-12-20 08:45:00,2026-12-20 10:00:00,7531,160,107,75
+AeroExpress,AE,Chhatrapati Shivaji International,Mumbai,India,BOM,AE362,Mumbai,Chennai,2026-12-10 10:45:00,2026-12-10 13:15:00,3931,180,162,150
+CloudJet,CJ,Cochin International,Kochi,India,COK,CJ547,Kochi,Goa,2026-12-16 07:15:00,2026-12-16 10:00:00,6564,180,158,165
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE988,Chennai,Goa,2026-12-05 17:00:00,2026-12-05 18:45:00,6747,180,107,105
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI634,Ahmedabad,Bangalore,2026-12-08 11:45:00,2026-12-08 12:45:00,5729,150,76,60
+CloudJet,CJ,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,CJ513,Ahmedabad,Chennai,2026-12-30 11:15:00,2026-12-30 13:45:00,4289,200,166,150
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE134,Bangalore,Chennai,2026-12-03 17:15:00,2026-12-03 19:30:00,4332,150,120,135
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE647,Kochi,New Delhi,2026-12-27 17:30:00,2026-12-27 19:15:00,2901,170,159,105
+AeroExpress,AE,Kempegowda International,Bangalore,India,BLR,AE245,Bangalore,Goa,2026-12-01 07:00:00,2026-12-01 08:45:00,6231,170,124,105
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW196,Mumbai,New Delhi,2026-12-22 20:30:00,2026-12-22 21:45:00,4509,200,179,75
+TransIndia,TI,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,TI224,Ahmedabad,Mumbai,2026-12-10 17:30:00,2026-12-10 19:15:00,4692,160,97,105
+TransIndia,TI,Cochin International,Kochi,India,COK,TI554,Kochi,Kolkata,2026-12-23 10:30:00,2026-12-23 11:45:00,8956,190,189,75
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ768,Pune,Mumbai,2026-12-18 22:00:00,2026-12-18 23:30:00,2567,170,95,90
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW687,Ahmedabad,Bangalore,2026-12-15 21:15:00,2026-12-15 23:00:00,2288,200,140,105
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA332,Mumbai,Goa,2026-12-16 14:00:00,2026-12-16 16:00:00,3912,190,134,120
+SkyWays,SW,Chennai International,Chennai,India,MAA,SW310,Chennai,Goa,2026-12-11 07:15:00,2026-12-11 09:15:00,3052,190,126,120
+AeroExpress,AE,Goa International,Goa,India,GOI,AE816,Goa,Hyderabad,2026-12-27 07:15:00,2026-12-27 08:30:00,2666,170,108,75
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA743,Mumbai,Goa,2026-12-04 18:30:00,2026-12-04 20:00:00,5449,200,127,90
+AeroExpress,AE,Chennai International,Chennai,India,MAA,AE583,Chennai,Ahmedabad,2026-12-20 06:15:00,2026-12-20 09:15:00,6780,190,157,180
+SkyWays,SW,Sardar Vallabhbhai Patel International,Ahmedabad,India,AMD,SW771,Ahmedabad,Goa,2026-12-13 10:45:00,2026-12-13 11:45:00,6098,160,95,60
+SkyWays,SW,Goa International,Goa,India,GOI,SW898,Goa,Pune,2026-12-02 13:15:00,2026-12-02 14:15:00,4576,190,149,60
+FastAir,FA,Pune International,Pune,India,PUN,FA846,Pune,Chennai,2026-12-02 05:15:00,2026-12-02 06:30:00,7243,160,89,75
+SkyWays,SW,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,SW640,Kolkata,Ahmedabad,2026-12-31 12:00:00,2026-12-31 13:45:00,6615,190,120,105
+TransIndia,TI,Kempegowda International,Bangalore,India,BLR,TI416,Bangalore,Hyderabad,2026-12-01 10:15:00,2026-12-01 13:00:00,5155,190,185,165
+TransIndia,TI,Goa International,Goa,India,GOI,TI357,Goa,Mumbai,2026-12-30 16:15:00,2026-12-30 17:30:00,5949,180,180,75
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE201,Kochi,Pune,2026-12-31 14:15:00,2026-12-31 15:15:00,2348,180,163,60
+TransIndia,TI,Chhatrapati Shivaji International,Mumbai,India,BOM,TI101,Mumbai,Goa,2026-12-12 15:15:00,2026-12-12 17:30:00,3517,190,188,135
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA943,Mumbai,Goa,2026-12-29 13:00:00,2026-12-29 14:45:00,4375,190,176,105
+AeroExpress,AE,Cochin International,Kochi,India,COK,AE667,Kochi,Hyderabad,2026-12-09 05:15:00,2026-12-09 08:00:00,8867,200,137,165
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW952,Mumbai,Bangalore,2026-12-10 12:30:00,2026-12-10 14:30:00,5240,190,182,120
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ154,Pune,Goa,2026-12-11 05:00:00,2026-12-11 07:30:00,2717,200,144,150
+CloudJet,CJ,Pune International,Pune,India,PUN,CJ672,Pune,New Delhi,2026-12-15 12:30:00,2026-12-15 15:00:00,8664,200,169,150
+SkyWays,SW,Cochin International,Kochi,India,COK,SW470,Kochi,Goa,2026-12-15 18:15:00,2026-12-15 21:15:00,7824,200,144,180
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI531,Kolkata,Pune,2026-12-09 12:45:00,2026-12-09 14:30:00,7892,190,165,105
+FastAir,FA,Chhatrapati Shivaji International,Mumbai,India,BOM,FA907,Mumbai,Ahmedabad,2026-12-22 19:15:00,2026-12-22 21:00:00,7048,170,164,105
+TransIndia,TI,Chennai International,Chennai,India,MAA,TI155,Chennai,Hyderabad,2026-12-21 08:45:00,2026-12-21 11:15:00,6160,150,105,150
+SkyWays,SW,Chhatrapati Shivaji International,Mumbai,India,BOM,SW801,Mumbai,Goa,2026-12-01 07:30:00,2026-12-01 09:30:00,4713,150,122,120
+TransIndia,TI,Indira Gandhi International,New Delhi,India,DEL,TI580,New Delhi,Mumbai,2026-12-10 05:30:00,2026-12-10 07:45:00,8158,160,139,135
+TransIndia,TI,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,TI158,Kolkata,Kochi,2026-12-13 16:45:00,2026-12-13 17:45:00,2008,160,84,60
+SkyWays,SW,Pune International,Pune,India,PUN,SW613,Pune,Mumbai,2026-12-24 14:15:00,2026-12-24 17:15:00,7877,180,136,180
+CloudJet,CJ,Chennai International,Chennai,India,MAA,CJ252,Chennai,Kolkata,2026-12-17 10:30:00,2026-12-17 11:45:00,4983,150,93,75
+CloudJet,CJ,Goa International,Goa,India,GOI,CJ367,Goa,Bangalore,2026-12-31 05:15:00,2026-12-31 06:45:00,8755,160,88,90
+CloudJet,CJ,Netaji Subhash Chandra Bose International,Kolkata,India,CCU,CJ546,Kolkata,Mumbai,2026-12-05 13:00:00,2026-12-05 14:15:00,8646,170,111,75

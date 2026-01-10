@@ -1,20 +1,19 @@
-# Flight Booking Frontend
+# Flight Booking Simulator UI
 
-This is a minimal React + Vite frontend for the Flight Booking Simulator backend.
+Minimal Vite + React + Tailwind prototype for a flight booking simulator UI.
 
-Quick start:
-
-1. Install dependencies:
+Run locally:
 
 ```bash
 cd frontend
 npm install
-```
-
-2. Run dev server:
-
-```bash
 npm run dev
 ```
 
-The app expects the backend API at `http://127.0.0.1:5000`.
+Open http://localhost:5173
+
+Features:
+- Landing with search box
+- Search results as cards with dynamic price updates
+- Multi-step booking flow with seat selection, passenger form, payment simulation
+- Download confirmation as JSON and PDF

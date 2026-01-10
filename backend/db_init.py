@@ -61,6 +61,17 @@ def init_database():
         created_at TEXT NOT NULL DEFAULT (datetime('now')),
         expires_at TEXT NOT NULL
     );
+    CREATE TABLE IF NOT EXISTS email_queue (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        to_email TEXT NOT NULL,
+        subject TEXT NOT NULL,
+        body TEXT NOT NULL,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        sent_at TEXT,
+        status TEXT NOT NULL DEFAULT 'pending',
+        attempts INTEGER NOT NULL DEFAULT 0,
+        last_error TEXT
+    );
     """
     c.executescript(extra_sql)
 

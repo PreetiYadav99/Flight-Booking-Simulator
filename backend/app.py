@@ -7,6 +7,9 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from dotenv import load_dotenv
 import os
 import sqlite3
+import smtplib
+import ssl
+from email.message import EmailMessage
 from datetime import datetime, timezone, timedelta
 from io import BytesIO
 import random
@@ -49,6 +52,31 @@ if CORS:
         'http://127.0.0.1:3000'
     ]
     CORS(app, supports_credentials=True, origins=allowed_origins)
+else:
+    # Provide a minimal CORS fallback when flask_cors isn't installed.
+    # This allows the frontend dev server to communicate with the API
+    # when running in a different origin (Vite localhost ports).
+    allowed_origins = [
+        os.environ.get('FRONTEND_ORIGIN', 'http://127.0.0.1:5500'),
+        'http://localhost:5500',
+        'http://localhost:5173', 'http://127.0.0.1:5173',
+        'http://localhost:5174', 'http://127.0.0.1:5174',
+        'http://localhost:5175', 'http://127.0.0.1:5175',
+        'http://localhost:5176', 'http://127.0.0.1:5176',
+        'http://localhost:5177', 'http://127.0.0.1:5177',
+        'http://localhost:5178', 'http://127.0.0.1:5178',
+        'http://localhost:3000', 'http://127.0.0.1:3000'
+    ]
+
+    @app.after_request
+    def _cors_fallback(response):
+        origin = request.headers.get('Origin')
+        if origin and origin in allowed_origins:
+            response.headers['Access-Control-Allow-Origin'] = origin
+            response.headers['Access-Control-Allow-Credentials'] = 'true'
+            response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
+            response.headers['Access-Control-Allow-Methods'] = 'GET,POST,PUT,DELETE,OPTIONS'
+        return response
 DB = "flights.db"
 
 
@@ -104,14 +132,27 @@ def login():
     payload = request.get_json(silent=True)
     if not payload:
         return jsonify({"error": "JSON payload required", "status": "error"}), 400
-    email = payload.get('email')
+    # DEBUG: print incoming payload (mask password)
+    try:
+        pcopy = dict(payload)
+        if 'password' in pcopy:
+            pcopy['password'] = '***MASKED***'
+        print(f"[DEBUG] /login payload: {pcopy}")
+    except Exception:
+        print("[DEBUG] /login received non-json payload")
+
+    # normalize incoming email to avoid whitespace/case mismatch
+    email = (payload.get('email') or '').strip().lower()
     password = payload.get('password')
+    print(f"[DEBUG] /login normalized_email='{email}'")
     if not email or not password:
         return jsonify({"error": "email and password required", "status": "error"}), 400
 
     user = query_db("SELECT id, email, name, password_hash, is_admin FROM users WHERE email = ?", (email,))
     if not user:
         return jsonify({"error": "Invalid credentials", "status": "error"}), 401
+    else:
+        print(f"[DEBUG] /login found_user id={user[0].get('id')} email={user[0].get('email')}")
     u = user[0]
     if not check_password_hash(u.get('password_hash',''), password):
         return jsonify({"error": "Invalid credentials", "status": "error"}), 401
@@ -134,16 +175,28 @@ def register():
     if not payload:
         return jsonify({"error": "JSON payload required", "status": "error"}), 400
 
-    email = (payload.get('email') or '').strip()
+    # DEBUG: print incoming payload (mask password)
+    try:
+        pcopy = dict(payload)
+        if 'password' in pcopy:
+            pcopy['password'] = '***MASKED***'
+        print(f"[DEBUG] /register payload: {pcopy}")
+    except Exception:
+        print("[DEBUG] /register received non-json payload")
+
+    # normalize email to a canonical form
+    email = (payload.get('email') or '').strip().lower()
     name = (payload.get('name') or '').strip()
     password = payload.get('password')
+    print(f"[DEBUG] /register normalized_email='{email}' name='{name}'")
 
     if not email or not password:
         return jsonify({"error": "email and password required", "status": "error"}), 400
 
     # check existing
-    existing = query_db("SELECT id FROM users WHERE email = ?", (email,))
+    existing = query_db("SELECT id, email, name FROM users WHERE email = ?", (email,))
     if existing:
+        print(f"[DEBUG] /register found existing user: {existing}")
         return jsonify({"error": "User already exists", "status": "error"}), 409
 
     pw_hash = generate_password_hash(password)
@@ -152,7 +205,17 @@ def register():
     except Exception as e:
         return jsonify({"error": f"Failed to create user: {str(e)}", "status": "error"}), 500
 
-    return jsonify({"status": "created", "email": email, "name": name}), 201
+    # Enqueue registration email for background delivery
+    try:
+        subject = 'Welcome to Flight Booking Simulator'
+        body = f"Hello {name or ''},\n\nThank you for registering at Flight Booking Simulator. We're glad to have you on board.\n\nBest regards,\nFlightSim Team"
+        enqueue_email(email, subject, body)
+        queued = True
+    except Exception as e:
+        queued = False
+        print(f"[DEBUG] enqueue_email error: {e}")
+
+    return jsonify({"status": "created", "email": email, "name": name, "email_queued": bool(queued)}), 201
 
 
 @app.route('/logout', methods=['POST'])
@@ -532,6 +595,114 @@ def get_stats():
     }), 200
 
 
+@app.route('/admin/demand', methods=['POST'])
+@login_required
+@error_handler
+def admin_set_demand():
+    """Admin-only endpoint to set demand level for a flight.
+    Request JSON: { "flight_id": int, "demand_level": float }
+    """
+    # ensure admin
+    if not session.get('is_admin'):
+        return jsonify({"error": "Admin privileges required", "status": "error"}), 403
+
+    payload = request.get_json(silent=True)
+    if not payload:
+        return jsonify({"error": "JSON payload required", "status": "error"}), 400
+
+    flight_id = payload.get('flight_id')
+    demand_level = payload.get('demand_level')
+
+    try:
+        flight_id = int(flight_id)
+    except Exception:
+        return jsonify({"error": "Valid 'flight_id' required", "status": "error"}), 400
+
+    try:
+        demand_level = float(demand_level)
+    except Exception:
+        return jsonify({"error": "Valid 'demand_level' required", "status": "error"}), 400
+
+    # clamp demand to safe range
+    if demand_level < 0.1 or demand_level > 10.0:
+        return jsonify({"error": "'demand_level' must be between 0.1 and 10.0", "status": "error"}), 400
+
+    # ensure flight exists
+    exists = query_db("SELECT id FROM flights WHERE id = ?", (flight_id,))
+    if not exists:
+        return jsonify({"error": f"Flight {flight_id} not found", "status": "error"}), 404
+
+    # set demand and return current computed price for convenience
+    set_demand_for_flight(flight_id, demand_level)
+    # fetch updated flight and compute price
+    row = query_db("SELECT id, base_price, total_seats, available_seats, departure FROM flights WHERE id = ?", (flight_id,))
+    price = None
+    if row:
+        price = compute_dynamic_price(row[0])
+
+    return jsonify({"status": "success", "flight_id": flight_id, "demand_level": demand_level, "current_price": price}), 200
+
+
+@app.route('/admin/email-queue', methods=['GET'])
+@login_required
+@error_handler
+def admin_email_queue():
+    """Admin endpoint to list queued emails."""
+    if not session.get('is_admin'):
+        return jsonify({"error": "Admin privileges required", "status": "error"}), 403
+    rows = query_db("SELECT id, to_email, subject, created_at, sent_at, status, attempts, last_error FROM email_queue ORDER BY created_at DESC LIMIT 500")
+    return jsonify({"status": "success", "count": len(rows), "emails": rows}), 200
+
+
+@app.route('/admin/email-queue/<int:email_id>/retry', methods=['POST'])
+@login_required
+@error_handler
+def admin_email_queue_retry(email_id):
+    """Admin endpoint to immediately retry sending a queued email."""
+    if not session.get('is_admin'):
+        return jsonify({"error": "Admin privileges required", "status": "error"}), 403
+    row = query_db("SELECT * FROM email_queue WHERE id = ?", (email_id,))
+    if not row:
+        return jsonify({"error": "Email not found", "status": "error"}), 404
+    r = row[0]
+    # attempt immediate send
+    ok = send_email_message(r.get('to_email'), r.get('subject'), r.get('body'))
+    now = datetime.utcnow().isoformat()
+    if ok:
+        execute_db("UPDATE email_queue SET status = 'sent', sent_at = ?, attempts = attempts + 1 WHERE id = ?", (now, email_id))
+        return jsonify({"status": "success", "email_id": email_id, "sent": True}), 200
+    else:
+        execute_db("UPDATE email_queue SET attempts = attempts + 1, last_error = ? WHERE id = ?", ("manual_retry_failed", email_id))
+        return jsonify({"status": "error", "email_id": email_id, "sent": False}), 500
+
+
+@app.route('/send-email', methods=['POST'])
+@login_required
+@error_handler
+def send_email():
+    """User-facing endpoint to enqueue an email for delivery.
+    Request JSON: { to_email?: str, subject: str, body: str }
+    If `to_email` omitted, uses session email.
+    """
+    payload = request.get_json(silent=True)
+    if not payload:
+        return jsonify({"error": "JSON payload required", "status": "error"}), 400
+
+    to_email = (payload.get('to_email') or session.get('email') or '').strip().lower()
+    subject = payload.get('subject') or 'Message from FlightSim'
+    body = payload.get('body') or ''
+
+    if not to_email:
+        return jsonify({"error": "to_email required or user must be logged in", "status": "error"}), 400
+
+    try:
+        enqueue_email(to_email, subject, body)
+        return jsonify({"status": "enqueued", "to_email": to_email}), 200
+    except Exception as e:
+        return jsonify({"error": f"Failed to enqueue: {e}", "status": "error"}), 500
+
+
+
 # ============= Dynamic Pricing Engine =============
 
 
@@ -561,6 +732,18 @@ def setup_dynamic_tables():
         temp_ref TEXT NOT NULL UNIQUE,
         created_at TEXT NOT NULL DEFAULT (datetime('now')),
         expires_at TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS email_queue (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        to_email TEXT NOT NULL,
+        subject TEXT NOT NULL,
+        body TEXT NOT NULL,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        sent_at TEXT,
+        status TEXT NOT NULL DEFAULT 'pending',
+        attempts INTEGER NOT NULL DEFAULT 0,
+        last_error TEXT
     );
     """
     try:
@@ -663,6 +846,99 @@ def compute_dynamic_price(flight_row):
         return float(flight_row.get('base_price', 0) or 0)
 
 
+def send_registration_email(to_email, name=None):
+    """Send a simple confirmation email to newly registered users.
+    SMTP settings are read from environment variables:
+      - SMTP_HOST (required to send), SMTP_PORT (default 587)
+      - SMTP_USER, SMTP_PASS (optional, for auth)
+      - EMAIL_FROM (defaults to SMTP_USER or no-reply@localhost)
+    This is best-effort and will return False on failure.
+    """
+    host = os.environ.get('SMTP_HOST')
+    if not host:
+        print('[INFO] SMTP_HOST not configured; skipping email send')
+        return False
+
+    port = int(os.environ.get('SMTP_PORT', 587))
+    user = os.environ.get('SMTP_USER')
+    password = os.environ.get('SMTP_PASS')
+    sender = os.environ.get('EMAIL_FROM') or user or 'no-reply@flightsim.local'
+
+    subject = 'Welcome to Flight Booking Simulator'
+    body = f"Hello {name or ''},\n\nThank you for registering at Flight Booking Simulator. We're glad to have you on board.\n\nBest regards,\nFlightSim Team"
+
+    msg = EmailMessage()
+    msg['From'] = sender
+    msg['To'] = to_email
+    msg['Subject'] = subject
+    msg.set_content(body)
+
+    try:
+        if port == 465:
+            context = ssl.create_default_context()
+            with smtplib.SMTP_SSL(host, port, context=context) as server:
+                if user and password:
+                    server.login(user, password)
+                server.send_message(msg)
+        else:
+            with smtplib.SMTP(host, port, timeout=10) as server:
+                server.ehlo()
+                try:
+                    server.starttls()
+                except Exception:
+                    pass
+                if user and password:
+                    server.login(user, password)
+                server.send_message(msg)
+        print(f"[INFO] Sent registration email to {to_email}")
+        return True
+    except Exception as e:
+        print(f"[WARN] Failed to send registration email to {to_email}: {e}")
+        return False
+
+
+def send_email_message(to_email, subject, body):
+    """Generic email sending helper used by the background worker."""
+    host = os.environ.get('SMTP_HOST')
+    if not host:
+        print('[INFO] SMTP_HOST not configured; skipping email send')
+        return False
+
+    port = int(os.environ.get('SMTP_PORT', 587))
+    user = os.environ.get('SMTP_USER')
+    password = os.environ.get('SMTP_PASS')
+    sender = os.environ.get('EMAIL_FROM') or user or 'no-reply@flightsim.local'
+
+    msg = EmailMessage()
+    msg['From'] = sender
+    msg['To'] = to_email
+    msg['Subject'] = subject
+    msg.set_content(body)
+
+    try:
+        if port == 465:
+            context = ssl.create_default_context()
+            with smtplib.SMTP_SSL(host, port, context=context) as server:
+                if user and password:
+                    server.login(user, password)
+                server.send_message(msg)
+        else:
+            with smtplib.SMTP(host, port, timeout=10) as server:
+                server.ehlo()
+                try:
+                    server.starttls()
+                except Exception:
+                    pass
+                if user and password:
+                    server.login(user, password)
+                server.send_message(msg)
+        print(f"[INFO] Sent email to {to_email}")
+        return True
+    except Exception as e:
+        print(f"[WARN] Failed to send email to {to_email}: {e}")
+        return False
+
+
 # Background simulation worker
 _simulation_thread = None
 _stop_simulation = threading.Event()
@@ -730,6 +1006,65 @@ def start_simulation(interval_seconds=30):
 
 def stop_simulation():
     _stop_simulation.set()
+
+
+# ============= Email queue worker =============
+_email_thread = None
+_stop_email_worker = threading.Event()
+
+
+def enqueue_email(to_email, subject, body):
+    """Insert an email into the queue for background sending."""
+    now = datetime.utcnow().isoformat()
+    execute_db("INSERT INTO email_queue (to_email, subject, body, created_at, status, attempts) VALUES (?, ?, ?, ?, 'pending', 0)", (to_email, subject, body, now))
+
+
+def email_worker(poll_interval=5):
+    print("Email worker started")
+    while not _stop_email_worker.is_set():
+        try:
+            # fetch pending emails
+            rows = query_db("SELECT id, to_email, subject, body, attempts FROM email_queue WHERE status = 'pending' ORDER BY created_at ASC LIMIT 10")
+            if not rows:
+                _stop_email_worker.wait(poll_interval)
+                continue
+
+            for r in rows:
+                eid = r.get('id')
+                to_email = r.get('to_email')
+                subject = r.get('subject')
+                body = r.get('body')
+                attempts = int(r.get('attempts') or 0)
+
+                ok = send_email_message(to_email, subject, body)
+                now = datetime.utcnow().isoformat()
+                if ok:
+                    execute_db("UPDATE email_queue SET status = 'sent', sent_at = ?, attempts = ? WHERE id = ?", (now, attempts + 1, eid))
+                else:
+                    attempts += 1
+                    if attempts >= 5:
+                        execute_db("UPDATE email_queue SET status = 'failed', last_error = ?, attempts = ? WHERE id = ?", ("send_failed", attempts, eid))
+                    else:
+                        execute_db("UPDATE email_queue SET attempts = ?, last_error = ? WHERE id = ?", (attempts, 'retry', eid))
+
+        except Exception as e:
+            print(f"Email worker error: {e}")
+            _stop_email_worker.wait(poll_interval)
+
+    print("Email worker stopped")
+
+
+def start_email_worker(poll_interval=5):
+    global _email_thread
+    if _email_thread and _email_thread.is_alive():
+        return
+    _stop_email_worker.clear()
+    _email_thread = threading.Thread(target=email_worker, args=(poll_interval,), daemon=True)
+    _email_thread.start()
+
+
+def stop_email_worker():
+    _stop_email_worker.set()
 
 
 # ============= MOCK EXTERNAL AIRLINE API SIMULATION =============
@@ -1231,6 +1566,12 @@ if __name__ == '__main__':
     except Exception:
         interval = 30
     start_simulation(interval_seconds=interval)
+    # start email worker with short poll interval
+    try:
+        email_interval = int(os.environ.get('EMAIL_POLL_INTERVAL', '5'))
+    except Exception:
+        email_interval = 5
+    start_email_worker(poll_interval=email_interval)
 
     try:
         # Run without debug/reloader to avoid restart races during automated checks
