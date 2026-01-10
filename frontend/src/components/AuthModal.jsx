@@ -9,13 +9,13 @@ export default function AuthModal({ onClose, onLogin }){
   const [showLoginPassword, setShowLoginPassword] = useState(false)
   const [showRegPassword, setShowRegPassword] = useState(false)
 
-  const API = (import.meta.env?.VITE_API_URL) || 'http://127.0.0.1:5000'
+  const BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'
 
   async function doLogin(e){
     e.preventDefault()
     setError(null); setLoading(true)
     try{
-      const res = await fetch(`${API}/login`, {
+      const res = await fetch(`${BASE}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -26,13 +26,7 @@ export default function AuthModal({ onClose, onLogin }){
       onLogin && onLogin({ email: data.email, name: data.name })
       setLoading(false)
       onClose && onClose()
-    }catch(err){
-      console.error('/login error', err)
-      // Improve error shown to user for network/CORS failures
-      if (err && err.name === 'TypeError') setError('Network or CORS error: could not reach API')
-      else setError(String(err))
-      setLoading(false)
-    }
+    }catch(err){ setError(String(err)); setLoading(false) }
   }
 
   async function doRegister(e){
@@ -40,7 +34,7 @@ export default function AuthModal({ onClose, onLogin }){
     setError(null); setLoading(true)
     try{
       // register
-      const r = await fetch(`${API}/register`, {
+      const r = await fetch(`${BASE}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -49,7 +43,7 @@ export default function AuthModal({ onClose, onLogin }){
       const rd = await r.json().catch(()=>({}))
       if (!r.ok){ setError(rd.error || 'Registration failed'); setLoading(false); return }
       // login after register
-      const res = await fetch(`${API}/login`, {
+      const res = await fetch(`${BASE}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -60,12 +54,7 @@ export default function AuthModal({ onClose, onLogin }){
       onLogin && onLogin({ email: data.email, name: data.name })
       setLoading(false)
       onClose && onClose()
-    }catch(err){
-      console.error('/register error', err)
-      if (err && err.name === 'TypeError') setError('Network or CORS error: could not reach API')
-      else setError(String(err))
-      setLoading(false)
-    }
+    }catch(err){ setError(String(err)); setLoading(false) }
   }
 
   return (

@@ -4,12 +4,12 @@ export default function AdminEmailQueue({ onClose }){
   const [emails, setEmails] = useState([])
   const [loading, setLoading] = useState(false)
   const [actionLoading, setActionLoading] = useState({})
-  const API = (import.meta.env?.VITE_API_URL) || 'http://127.0.0.1:5000'
+  const BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'
 
   async function fetchEmails(){
     setLoading(true)
     try{
-      const res = await fetch(`${API}/admin/email-queue`, { credentials: 'include' })
+      const res = await fetch(`${BASE}/admin/email-queue`, { credentials: 'include' })
       const data = await res.json().catch(()=>({}))
       if (res.ok){ setEmails(data.emails || []) }
       else {
@@ -24,7 +24,7 @@ export default function AdminEmailQueue({ onClose }){
   async function retryEmail(id){
     setActionLoading(prev=>({ ...prev, [id]: true }))
     try{
-      const res = await fetch(`${API}/admin/email-queue/${id}/retry`, { method: 'POST', credentials: 'include' })
+      const res = await fetch(`${BASE}/admin/email-queue/${id}/retry`, { method: 'POST', credentials: 'include' })
       const data = await res.json().catch(()=>({}))
       if (!res.ok){ console.error('Retry failed', data) }
       await fetchEmails()

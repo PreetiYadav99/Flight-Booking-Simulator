@@ -29,8 +29,8 @@ export default function RegisterModal({ onClose }){
     setError(null)
     setLoading(true)
     try{
-      const API = (import.meta.env?.VITE_API_URL) || 'http://127.0.0.1:5000'
-      const res = await fetch(`${API}/register`, {
+      const BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'
+      const res = await fetch(`${BASE}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

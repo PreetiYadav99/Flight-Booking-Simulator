@@ -35,12 +35,12 @@ export default function BookingFlow({ flight, onClose, user }){
     setStep(4)
     // optionally enqueue an email with booking summary
     if (emailMe){
-      const API = (import.meta.env?.VITE_API_URL) || 'http://127.0.0.1:5000'
+      const BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'
       const payload = {
         subject: `Your FlightSim booking ${token}`,
         body: JSON.stringify({ pnr: token, flight, seat, passenger }, null, 2)
       }
-      fetch(`${API}/send-email`, { method:'POST', headers: { 'Content-Type':'application/json' }, credentials: 'include', body: JSON.stringify(payload) })
+      fetch(`${BASE}/send-email`, { method:'POST', headers: { 'Content-Type':'application/json' }, credentials: 'include', body: JSON.stringify(payload) })
         .then(r=>r.json()).then(j=> console.log('enqueue email:', j)).catch(e=>console.warn('email enqueue failed', e))
     }
   }

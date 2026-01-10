@@ -21,8 +21,8 @@ export default function SearchBox({ onSearch }){
 
   useEffect(()=>{
     // fetch airports for autocomplete (best-effort)
-    const API = (import.meta.env?.VITE_API_URL) || 'http://127.0.0.1:5000'
-    fetch(`${API}/airports`).then(r=>r.json()).then(j=>{
+    const BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'
+    fetch(`${BASE}/airports`).then(r=>r.json()).then(j=>{
       if (j && Array.isArray(j.airports)) setAirports(j.airports)
     }).catch(()=>{})
   },[])

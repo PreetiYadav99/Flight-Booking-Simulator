@@ -13,8 +13,8 @@ export default function App(){
 
   useEffect(()=>{
     // check session
-    const API = (import.meta.env?.VITE_API_URL) || 'http://127.0.0.1:5000'
-    fetch(`${API}/me`, { credentials: 'include' })
+    const BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'
+    fetch(`${BASE}/me`, { credentials: 'include' })
       .then(r=>r.json())
       .then(data=>{
         if (data && data.status === 'success' && data.user){
@@ -27,9 +27,9 @@ export default function App(){
   }, [])
 
   async function handleLogout(){
-    const API = (import.meta.env?.VITE_API_URL) || 'http://127.0.0.1:5000'
+    const BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'
     try{
-      await fetch(`${API}/logout`, { method: 'POST', credentials: 'include' })
+      await fetch(`${BASE}/logout`, { method: 'POST', credentials: 'include' })
     }catch(e){}
     setUser(null)
     setShowAuth(true)
