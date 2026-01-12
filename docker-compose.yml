@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - FLASK_ENV=production
+      - SECRET_KEY=dev-secret-key
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  db:
+    image: nouchka/sqlite3
+    volumes:
+      - ./backend:/data
+
+# Note: the `db` service uses a tiny sqlite image to provide a shared volume; sqlite
+# files are stored under ./backend and the backend container initializes `flights.db`.
